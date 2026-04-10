@@ -80,10 +80,23 @@
     }
     .btn-nav:hover { background: var(--purple-dark); transform: translateY(-1px); }
     .menu-toggle { display: none; background: none; border: none; cursor: pointer; font-size: 1.6rem; color: var(--black); padding: 6px; }
-    .mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; box-shadow: 0 8px 20px rgba(0,0,0,0.1); padding: 20px 6%; z-index: 99; }
+
+    /* MOBILE MENU — FIXED */
+    .mobile-menu {
+      display: none;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: white; box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 20px 6%; z-index: 99;
+    }
     .mobile-menu.open { display: block; }
     .mobile-menu a { display: block; padding: 12px 0; border-bottom: 1px solid var(--gray); font-weight: 500; font-size: 1.05rem; }
-    .mobile-menu .btn-primary { margin-top: 16px; text-align: center; display: block; }
+    .mobile-menu .mobile-section-label {
+      display: block; padding: 16px 0 4px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--purple); border-bottom: none;
+    }
+    .mobile-menu .mobile-sub-link { padding-left: 12px; font-size: 0.97rem; color: var(--text-light); }
+    .mobile-menu .btn-primary { margin-top: 16px; text-align: center; display: block; border-bottom: none; }
 
     /* HERO */
     .hero {
@@ -272,11 +285,17 @@
       <button class="lang-btn" id="btn-es" onclick="setLang('es')" title="Español"><img src="images/espanol.png" alt="ES"></button>
     </div>
     <a href="#contact" class="btn-nav" data-en="Get a Quote" data-es="Solicitar Consulta">Get a Quote</a>
-    <button class="menu-toggle" onclick="this.parentElement.querySelector('.mobile-menu').classList.toggle('open')">☰</button>
+    <button class="menu-toggle" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">☰</button>
   </div>
+
+  <!-- MOBILE MENU — correctly placed inside navbar -->
   <div class="mobile-menu">
-    <a href="#about" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="About" data-es="Nosotros">About</a>
-    <a href="#services" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Services" data-es="Servicios">Services</a>
+    <a href="#about" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="About Us" data-es="Nosotros">About Us</a>
+    <span class="mobile-section-label" data-en="Services" data-es="Servicios">Services</span>
+    <a href="#services" class="mobile-sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Digital Marketing" data-es="Marketing Digital">Digital Marketing</a>
+    <a href="#services" class="mobile-sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Web Development" data-es="Desarrollo Web">Web Development</a>
+    <a href="#services" class="mobile-sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Automation" data-es="Automatización">Automation</a>
+    <a href="#services" class="mobile-sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Consulting" data-es="Consultoría">Consulting</a>
     <a href="#contact" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Contact" data-es="Contacto">Contact</a>
     <a href="#contact" class="btn-primary" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Get a Quote" data-es="Solicitar Consulta">Get a Quote</a>
   </div>
@@ -542,7 +561,6 @@
     document.documentElement.lang = lang;
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     document.getElementById('btn-es').classList.toggle('active', lang === 'es');
-    // Update form redirect URL based on language
     const nextUrl = document.getElementById('form-next-url');
     if (nextUrl) {
       nextUrl.value = lang === 'es'
@@ -560,7 +578,6 @@
         el.innerHTML = text;
       }
     });
-    // Cookie text
     const cookieText = document.getElementById('cookie-text');
     if (cookieText) {
       if (lang === 'es') {
@@ -588,3 +605,4 @@
 </script>
 </body>
 </html>
+
