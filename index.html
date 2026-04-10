@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pura Group LLC | Digital Services & Business Solutions</title>
+  <meta name="description" content="Pura Group LLC – Professional digital services, business automation, and global consulting. Based in the USA, serving clients worldwide.">
+  <link rel="icon" type="image/png" href="images/1-favicon-pura-group.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pura-group.com/">
+  <meta property="og:title" content="Pura Group LLC | Digital Services & Business Solutions">
+  <meta property="og:description" content="Professional digital services, business automation, and global consulting. Based in the USA, serving clients worldwide.">
+  <meta property="og:image" content="https://pura-group.com/images/og-logo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Pura Group LLC">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pura Group LLC | Digital Services & Business Solutions">
+  <meta name="twitter:description" content="Professional digital services, business automation, and global consulting.">
+  <meta name="twitter:image" content="https://pura-group.com/images/og-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <style>
+    :root {
+      --purple: #927eb6;
+      --purple-dark: #6a5a8e;
+      --purple-light: #c4b8dc;
+      --purple-bg: #f3f0f9;
+      --black: #000000;
+      --white: #ffffff;
+      --gray: #efecec;
+      --text: #1a1a1a;
+      --text-light: #555;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(146,126,182,0.12);
+      --shadow-lg: 0 12px 48px rgba(146,126,182,0.2);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; -webkit-font-smoothing: antialiased; font-size: 16px; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+
+    /* COOKIE */
+    #cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+      background: var(--black); color: white; padding: 16px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px; font-size: 0.9rem;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    }
+    #cookie-banner a { color: var(--purple-light); text-decoration: underline; }
+    #cookie-text { flex: 1; min-width: 200px; }
+    .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
+    .btn-cookie { padding: 10px 22px; border-radius: 50px; font-weight: 600; font-size: 0.9rem; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
+    .btn-accept { background: var(--purple); color: white; }
+    .btn-reject { background: transparent; color: #aaa; border: 1px solid rgba(255,255,255,0.3); }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 6%; background: var(--white);
+      box-shadow: 0 1px 0 rgba(146,126,182,0.15); position: sticky; top: 0; z-index: 100;
+    }
+    .navbar-logo img { height: 48px; width: auto; }
+    .navbar-right { display: flex; align-items: center; gap: 20px; }
+    .lang-switcher { display: flex; align-items: center; gap: 8px; }
+    .lang-btn { background: none; border: none; cursor: pointer; opacity: 0.45; transition: opacity 0.2s; padding: 0; }
+    .lang-btn.active { opacity: 1; }
+    .lang-btn img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
+    .btn-nav {
+      background: var(--purple); color: white; padding: 11px 24px;
+      border-radius: 50px; font-weight: 600; font-size: 0.92rem;
+      font-family: 'DM Sans', sans-serif; transition: all 0.2s;
+      border: none; cursor: pointer; display: inline-block;
+    }
+    .btn-nav:hover { background: var(--purple-dark); transform: translateY(-1px); }
+    .menu-toggle { display: none; background: none; border: none; cursor: pointer; font-size: 1.6rem; color: var(--black); padding: 6px; }
+    .mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; box-shadow: 0 8px 20px rgba(0,0,0,0.1); padding: 20px 6%; z-index: 99; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 12px 0; border-bottom: 1px solid var(--gray); font-weight: 500; font-size: 1.05rem; }
+    .mobile-menu .btn-primary { margin-top: 16px; text-align: center; display: block; }
+
+    /* HERO */
+    .hero {
+      position: relative; min-height: 580px;
+      background: url('images/3-foto-header-pura-group.webp') center center / cover no-repeat;
+      display: flex; align-items: center;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.78) 55%, rgba(0,0,0,0.25) 100%);
+    }
+    .hero-content { position: relative; z-index: 1; padding: 60px 8%; max-width: 700px; }
+    .hero-tag {
+      display: inline-block; background: var(--purple); color: white;
+      padding: 5px 18px; border-radius: 50px; font-size: 0.82rem;
+      font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 22px;
+    }
+    .hero h1 { font-size: 3.2rem; font-weight: 700; color: white; line-height: 1.15; margin-bottom: 20px; }
+    .hero h1 span { color: var(--purple-light); }
+    .hero-sub { font-size: 1.08rem; color: rgba(255,255,255,0.88); margin-bottom: 36px; max-width: 520px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block; background: var(--purple); color: white;
+      padding: 14px 36px; border-radius: 50px; font-weight: 600; font-size: 1rem;
+      font-family: 'DM Sans', sans-serif; transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(146,126,182,0.4); border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--purple-dark); transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-block; background: transparent; color: white;
+      padding: 14px 36px; border-radius: 50px; font-weight: 600; font-size: 1rem;
+      font-family: 'DM Sans', sans-serif; transition: all 0.2s;
+      border: 2px solid rgba(255,255,255,0.5); cursor: pointer;
+    }
+    .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+    /* STATS */
+    .stats-bar { background: var(--black); color: white; display: grid; grid-template-columns: repeat(3, 1fr); }
+    .stat-item { padding: 28px 20px; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 700; color: var(--purple-light); line-height: 1; }
+    .stat-label { font-size: 0.85rem; opacity: 0.7; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* SECTIONS */
+    .section { padding: 90px 6%; }
+    .section-gray { background: var(--gray); }
+    .section-dark { background: var(--black); color: white; }
+    .section-purple { background: var(--purple-bg); }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .text-center { text-align: center; }
+    .section-label { display: inline-block; color: var(--purple); font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-size: 2.4rem; font-weight: 700; color: var(--black); margin-bottom: 16px; line-height: 1.25; }
+    .section-title span { color: var(--purple); }
+    .section-title.light { color: white; }
+    .section-sub { font-size: 1rem; color: var(--text-light); max-width: 620px; margin: 0 auto 60px; }
+    .section-sub.light { color: rgba(255,255,255,0.7); }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-img { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .about-img img { width: 100%; }
+    .about-text .section-label { display: block; }
+    .about-text h2 { font-size: 2.4rem; font-weight: 700; margin-bottom: 20px; line-height: 1.25; }
+    .about-text p { color: var(--text-light); margin-bottom: 16px; font-size: 0.97rem; }
+    .about-checks { margin: 28px 0; display: flex; flex-direction: column; gap: 12px; }
+    .about-check { display: flex; align-items: flex-start; gap: 12px; font-size: 0.97rem; }
+    .about-check::before { content: "✦"; color: var(--purple); font-size: 0.9rem; margin-top: 3px; flex-shrink: 0; }
+
+    /* SERVICES */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 20px; }
+    .service-card {
+      background: white; border-radius: var(--radius); padding: 36px 28px;
+      box-shadow: var(--shadow); border: 1px solid rgba(146,126,182,0.1); transition: all 0.25s;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--purple-light); }
+    .service-icon { width: 64px; height: 64px; margin-bottom: 20px; border-radius: 12px; overflow: hidden; background: var(--purple-bg); display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+    .service-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .service-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--black); margin-bottom: 10px; }
+    .service-card p { font-size: 0.92rem; color: var(--text-light); line-height: 1.7; }
+    .service-link { display: inline-block; margin-top: 16px; color: var(--purple); font-weight: 600; font-size: 0.9rem; font-family: 'DM Sans', sans-serif; }
+    .service-link:hover { color: var(--purple-dark); }
+
+    /* DIGITAL */
+    .digital-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 20px; }
+    .digital-card { background: rgba(255,255,255,0.05); border-radius: var(--radius); padding: 28px 24px; border: 1px solid rgba(255,255,255,0.08); transition: all 0.2s; }
+    .digital-card:hover { background: rgba(146,126,182,0.15); border-color: var(--purple); }
+    .icon-wrap { width: 56px; height: 56px; background: var(--purple); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+    .icon-wrap img { width: 36px; height: 36px; object-fit: contain; filter: brightness(0) invert(1); }
+    .digital-card h3 { font-size: 1.15rem; font-weight: 600; color: white; margin-bottom: 10px; }
+    .digital-card p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+
+    /* PROCESS */
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 20px; }
+    .process-step { text-align: center; padding: 24px 16px; }
+    .process-num { width: 52px; height: 52px; border-radius: 50%; background: var(--purple); color: white; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+    .process-step h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; color: var(--black); }
+    .process-step p { font-size: 0.9rem; color: var(--text-light); }
+
+    /* FORM */
+    .form-wrapper { background: white; border-radius: 20px; padding: 52px 48px; box-shadow: var(--shadow-lg); max-width: 640px; margin: 0 auto; border: 1px solid rgba(146,126,182,0.1); }
+    .form-title { font-size: 2rem; font-weight: 700; color: var(--black); margin-bottom: 8px; text-align: center; }
+    .form-sub { font-size: 0.94rem; color: var(--text-light); text-align: center; margin-bottom: 32px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-weight: 600; font-size: 0.87rem; color: var(--black); margin-bottom: 6px; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 13px 16px; border: 1.5px solid #e0dde8; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 1rem; color: var(--text); background: white; transition: border-color 0.2s; outline: none; }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--purple); }
+    .phone-row { display: flex; gap: 8px; }
+    .phone-prefix { width: 110px; flex-shrink: 0; padding: 13px 10px; border: 1.5px solid #e0dde8; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; }
+    .phone-prefix:focus { border-color: var(--purple); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-privacy { font-size: 0.8rem; color: var(--text-light); margin-bottom: 24px; }
+    .form-privacy a { color: var(--purple); text-decoration: underline; }
+    .btn-submit { width: 100%; background: var(--purple); color: white; padding: 15px; border-radius: 50px; font-weight: 700; font-size: 1.05rem; font-family: 'DM Sans', sans-serif; border: none; cursor: pointer; transition: all 0.2s; }
+    .btn-submit:hover { background: var(--purple-dark); transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer { background: var(--black); color: rgba(255,255,255,0.7); padding: 52px 6% 28px; }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-brand img { height: 40px; margin-bottom: 16px; filter: brightness(0) invert(1) opacity(0.85); }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.7; }
+    .footer-col h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: white; margin-bottom: 16px; }
+    .footer-col a { display: block; font-size: 0.9rem; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--purple-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 0.84rem; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom a { color: rgba(255,255,255,0.5); }
+    .footer-bottom a:hover { color: var(--purple-light); }
+
+    /* SCROLL TOP */
+    #btn-top { position: fixed; bottom: 28px; right: 28px; z-index: 9998; background: var(--purple); color: white; width: 46px; height: 46px; border-radius: 50%; display: none; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.2); font-size: 1.2rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .stats-bar { grid-template-columns: 1fr 1fr 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .digital-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      body { font-size: 17px; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero-sub { font-size: 1.1rem; }
+      .btn-nav { display: none; }
+      .menu-toggle { display: block; }
+      .navbar { position: relative; }
+      .navbar-logo img { height: 44px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .digital-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .form-wrapper { padding: 32px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .section { padding: 60px 5%; }
+      .section-title { font-size: 2rem; }
+      .section-sub { font-size: 1.05rem; }
+      .btn-outline { display: none; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .stats-bar { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .stat-item:last-child { border-bottom: none; }
+      .service-card p { font-size: 1rem; }
+      .service-card h3 { font-size: 1.4rem; }
+      .process-step p { font-size: 0.95rem; }
+      .digital-card p { font-size: 0.95rem; }
+      .form-group input, .form-group textarea, .form-group select, .phone-prefix { font-size: 16px !important; }
+      .about-text h2 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="cookie-banner">
+  <span id="cookie-text">We use our own and third-party cookies to improve your browsing experience and analyze site usage. For more information, please visit our <a href="cookie-policy.html">cookie policy</a> page.</span>
+  <div class="cookie-btns">
+    <button class="btn-cookie btn-reject" onclick="closeCookies()" id="cookie-btn-reject">Decline</button>
+    <button class="btn-cookie btn-accept" onclick="acceptCookies()" id="cookie-btn-accept">Accept</button>
+  </div>
+</div>
+
+<nav class="navbar" style="position:relative">
+  <a href="index.html" class="navbar-logo"><img src="images/3-logo-pura-group-llc.png" alt="Pura Group LLC" width="150" height="48"></a>
+  <div class="navbar-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')" title="English"><img src="images/english.png" alt="EN"></button>
+      <button class="lang-btn" id="btn-es" onclick="setLang('es')" title="Español"><img src="images/espanol.png" alt="ES"></button>
+    </div>
+    <a href="#contact" class="btn-nav" data-en="Get a Quote" data-es="Solicitar Consulta">Get a Quote</a>
+    <button class="menu-toggle" onclick="this.parentElement.querySelector('.mobile-menu').classList.toggle('open')">☰</button>
+  </div>
+  <div class="mobile-menu">
+    <a href="#about" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="About" data-es="Nosotros">About</a>
+    <a href="#services" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Services" data-es="Servicios">Services</a>
+    <a href="#contact" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Contact" data-es="Contacto">Contact</a>
+    <a href="#contact" class="btn-primary" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Get a Quote" data-es="Solicitar Consulta">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-tag" data-en="Digital Services · Business Solutions" data-es="Servicios Digitales · Soluciones Empresariales">Digital Services · Business Solutions</span>
+    <h1 data-en="Your Business,<br><span>Elevated Digitally</span>" data-es="Tu Negocio,<br><span>Elevado Digitalmente</span>">Your Business,<br><span>Elevated Digitally</span></h1>
+    <p class="hero-sub" data-en="We help businesses grow through intelligent digital solutions, automation, and global professional services. Based in the USA, serving clients worldwide." data-es="Ayudamos a empresas a crecer mediante soluciones digitales inteligentes, automatización y servicios profesionales globales. Con base en EE.UU., sirviendo clientes en todo el mundo.">We help businesses grow through intelligent digital solutions, automation, and global professional services. Based in the USA, serving clients worldwide.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary" data-en="Start Your Project" data-es="Inicia Tu Proyecto">Start Your Project</a>
+      <a href="#services" class="btn-outline" data-en="Our Services" data-es="Nuestros Servicios">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">150+</div><div class="stat-label" data-en="Projects Completed" data-es="Proyectos Completados">Projects Completed</div></div>
+  <div class="stat-item"><div class="stat-num">40+</div><div class="stat-label" data-en="Clients Worldwide" data-es="Clientes en el Mundo">Clients Worldwide</div></div>
+  <div class="stat-item"><div class="stat-num">8+</div><div class="stat-label" data-en="Years of Experience" data-es="Años de Experiencia">Years of Experience</div></div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img"><img src="images/6-PURA-GROUP-LLC-PEOPLE-1.png" alt="Pura Group Team"></div>
+      <div class="about-text">
+        <span class="section-label" data-en="Who We Are" data-es="Quiénes Somos">Who We Are</span>
+        <h2 data-en="A Digital Partner You Can <span style='color:var(--purple)'>Trust</span>" data-es="Un Socio Digital en Quien Puedes <span style='color:var(--purple)'>Confiar</span>">A Digital Partner You Can <span style="color:var(--purple)">Trust</span></h2>
+        <p data-en="Pura Group LLC is a US-based company offering comprehensive digital and professional services. We work with entrepreneurs, SMEs, and corporations looking to grow their digital presence and optimize their operations." data-es="Pura Group LLC es una empresa con base en EE.UU. que ofrece servicios digitales y profesionales integrales. Trabajamos con emprendedores, PYMEs y corporaciones que buscan crecer en el mundo digital.">Pura Group LLC is a US-based company offering comprehensive digital and professional services. We work with entrepreneurs, SMEs, and corporations looking to grow their digital presence and optimize their operations.</p>
+        <p data-en="Our multidisciplinary team combines technical expertise with strategic vision to deliver results that truly matter for your business." data-es="Nuestro equipo multidisciplinario combina experiencia técnica con visión estratégica para ofrecer resultados que realmente importan.">Our multidisciplinary team combines technical expertise with strategic vision to deliver results that truly matter for your business.</p>
+        <div class="about-checks">
+          <div class="about-check" data-en="Bilingual team — English & Spanish" data-es="Equipo bilingüe — Inglés y Español">Bilingual team — English & Spanish</div>
+          <div class="about-check" data-en="Remote-first, globally accessible" data-es="Trabajo remoto, accesible globalmente">Remote-first, globally accessible</div>
+          <div class="about-check" data-en="Results-focused, client-centered approach" data-es="Enfoque orientado a resultados y al cliente">Results-focused, client-centered approach</div>
+          <div class="about-check" data-en="Transparent pricing, no surprises" data-es="Precios transparentes, sin sorpresas">Transparent pricing, no surprises</div>
+        </div>
+        <a href="#contact" class="btn-primary" data-en="Work With Us" data-es="Trabaja Con Nosotros">Work With Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section-gray" id="services">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label" data-en="What We Do" data-es="Lo Que Hacemos">What We Do</span>
+      <h2 class="section-title" data-en="Our Core <span>Services</span>" data-es="Nuestros Servicios <span>Principales</span>">Our Core <span>Services</span></h2>
+      <p class="section-sub" data-en="End-to-end digital and professional services tailored to your business needs." data-es="Servicios digitales y profesionales integrales adaptados a las necesidades de tu negocio.">End-to-end digital and professional services tailored to your business needs.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><img src="images/7-pura-group-services.png" alt=""></div>
+        <h3 data-en="Digital Strategy & Marketing" data-es="Estrategia Digital y Marketing">Digital Strategy & Marketing</h3>
+        <p data-en="SEO, social media management, content marketing, paid ads, and full digital strategy to grow your brand online." data-es="SEO, gestión de redes sociales, marketing de contenidos, publicidad pagada y estrategia digital para hacer crecer tu marca.">SEO, social media management, content marketing, paid ads, and full digital strategy to grow your brand online.</p>
+        <a href="#contact" class="service-link" data-en="Learn more →" data-es="Saber más →">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><img src="images/7-pura-group-services-1.png" alt=""></div>
+        <h3 data-en="Business Automation" data-es="Automatización Empresarial">Business Automation</h3>
+        <p data-en="Workflow automation, CRM integration, process optimization, and custom solutions to save time and reduce costs." data-es="Automatización de flujos de trabajo, integración de CRM, optimización de procesos y soluciones personalizadas.">Workflow automation, CRM integration, process optimization, and custom solutions to save time and reduce costs.</p>
+        <a href="#contact" class="service-link" data-en="Learn more →" data-es="Saber más →">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><img src="images/7-pura-group-services-2.png" alt=""></div>
+        <h3 data-en="Web Design & Development" data-es="Diseño y Desarrollo Web">Web Design & Development</h3>
+        <p data-en="Professional websites, landing pages, e-commerce, and web apps built for performance and conversion." data-es="Sitios web profesionales, landing pages, e-commerce y apps web construidas para rendimiento y conversión.">Professional websites, landing pages, e-commerce, and web apps built for performance and conversion.</p>
+        <a href="#contact" class="service-link" data-en="Learn more →" data-es="Saber más →">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><img src="images/7-pura-group-services-3.png" alt=""></div>
+        <h3 data-en="Analytics & Reporting" data-es="Análisis y Reportes">Analytics & Reporting</h3>
+        <p data-en="Data-driven insights, custom dashboards, KPI tracking, and business intelligence for better decisions." data-es="Análisis basado en datos, dashboards personalizados, seguimiento de KPIs e inteligencia empresarial.">Data-driven insights, custom dashboards, KPI tracking, and business intelligence for better decisions.</p>
+        <a href="#contact" class="service-link" data-en="Learn more →" data-es="Saber más →">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚖️</div>
+        <h3 data-en="Professional & Legal Services" data-es="Servicios Profesionales y Legales">Professional & Legal Services</h3>
+        <p data-en="US business formation, compliance consulting, document translation, notary services, and professional advisory." data-es="Constitución de empresas en EE.UU., consultoría de cumplimiento, traducción de documentos y asesoría profesional.">US business formation, compliance consulting, document translation, notary services, and professional advisory.</p>
+        <a href="#contact" class="service-link" data-en="Learn more →" data-es="Saber más →">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3 data-en="Global Consulting" data-es="Consultoría Global">Global Consulting</h3>
+        <p data-en="International expansion, market entry strategy, and bilingual consulting for US-Latin America markets." data-es="Expansión internacional, estrategia de entrada al mercado y consultoría bilingüe para mercados EE.UU.-Latinoamérica.">International expansion, market entry strategy, and bilingual consulting for US-Latin America markets.</p>
+        <a href="#contact" class="service-link" data-en="Learn more →" data-es="Saber más →">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIGITAL DETAIL -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label" style="color:var(--purple-light)" data-en="Digital Solutions" data-es="Soluciones Digitales">Digital Solutions</span>
+      <h2 class="section-title light" data-en="Everything Your Business Needs <span style='color:var(--purple-light)'>Online</span>" data-es="Todo Lo Que Tu Negocio Necesita <span style='color:var(--purple-light)'>En Línea</span>">Everything Your Business Needs <span style="color:var(--purple-light)">Online</span></h2>
+      <p class="section-sub light" data-en="A complete digital ecosystem to help your business thrive." data-es="Un ecosistema digital completo para que tu negocio prospere.">A complete digital ecosystem to help your business thrive.</p>
+    </div>
+    <div class="digital-grid">
+      <div class="digital-card">
+        <div class="icon-wrap"><img src="images/4-icono-pura-group-services-1.png" alt=""></div>
+        <h3 data-en="E-Commerce Solutions" data-es="Soluciones E-Commerce">E-Commerce Solutions</h3>
+        <p data-en="Full online store setup, payment gateway integration, inventory management, and conversion optimization." data-es="Configuración completa de tienda online, integración de pasarelas de pago, gestión de inventario y optimización de conversión.">Full online store setup, payment gateway integration, inventory management, and conversion optimization.</p>
+      </div>
+      <div class="digital-card">
+        <div class="icon-wrap"><img src="images/4-icono-pura-group-services-2.png" alt=""></div>
+        <h3 data-en="Process Automation" data-es="Automatización de Procesos">Process Automation</h3>
+        <p data-en="Eliminate repetitive tasks with intelligent automation. Integrate your tools and workflows seamlessly." data-es="Elimina tareas repetitivas con automatización inteligente. Integra tus herramientas y flujos de trabajo sin problemas.">Eliminate repetitive tasks with intelligent automation. Integrate your tools and workflows seamlessly.</p>
+      </div>
+      <div class="digital-card">
+        <div class="icon-wrap"><img src="images/4-icono-pura-group-services-3.png" alt=""></div>
+        <h3 data-en="Global Digital Presence" data-es="Presencia Digital Global">Global Digital Presence</h3>
+        <p data-en="Multilingual websites, international SEO, and digital marketing strategies for global reach." data-es="Sitios web multilingües, SEO internacional y estrategias de marketing digital para alcance global.">Multilingual websites, international SEO, and digital marketing strategies for global reach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section section-purple">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label" data-en="How It Works" data-es="Cómo Funciona">How It Works</span>
+      <h2 class="section-title" data-en="Our Simple <span>4-Step Process</span>" data-es="Nuestro Simple <span>Proceso de 4 Pasos</span>">Our Simple <span>4-Step Process</span></h2>
+      <p class="section-sub" data-en="From first conversation to final delivery, we make it easy." data-es="Desde la primera conversación hasta la entrega final, lo hacemos fácil.">From first conversation to final delivery, we make it easy.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <h3 data-en="Discovery Call" data-es="Llamada Inicial">Discovery Call</h3>
+        <p data-en="We learn about your business, goals, and challenges in a free consultation." data-es="Conocemos tu negocio, objetivos y desafíos en una consulta gratuita.">We learn about your business, goals, and challenges in a free consultation.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <h3 data-en="Strategy & Proposal" data-es="Estrategia y Propuesta">Strategy & Proposal</h3>
+        <p data-en="We create a tailored plan and send a clear, transparent proposal." data-es="Creamos un plan personalizado y enviamos una propuesta clara y transparente.">We create a tailored plan and send a clear, transparent proposal.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <h3 data-en="Execution" data-es="Ejecución">Execution</h3>
+        <p data-en="Our team gets to work. You stay informed with regular updates." data-es="Nuestro equipo trabaja. Te mantenemos informado con actualizaciones regulares.">Our team gets to work. You stay informed with regular updates.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">04</div>
+        <h3 data-en="Delivery & Support" data-es="Entrega y Soporte">Delivery & Support</h3>
+        <p data-en="We deliver results and provide ongoing support for long-term success." data-es="Entregamos resultados y brindamos soporte continuo para el éxito a largo plazo.">We deliver results and provide ongoing support for long-term success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="section section-gray" id="contact">
+  <div class="container">
+    <div class="form-wrapper">
+      <h2 class="form-title" data-en="Get a Free Consultation" data-es="Obtén una Consulta Gratuita">Get a Free Consultation</h2>
+      <p class="form-sub" data-en="Tell us about your project. We'll get back to you within 24 hours." data-es="Cuéntanos sobre tu proyecto. Te responderemos en menos de 24 horas.">Tell us about your project. We'll get back to you within 24 hours.</p>
+      <form id="contact-form" action="https://formsubmit.co/puragroupllc@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="🌐 NUEVA CONSULTA LEAD">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" id="form-next-url" value="https://pura-group.com/thank-you.html">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-en="Full Name *" data-es="Nombre Completo *">Full Name *</label>
+            <input type="text" name="Name" required>
+          </div>
+          <div class="form-group">
+            <label data-en="Email *" data-es="Email *">Email *</label>
+            <input type="email" name="Email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-en="Phone / WhatsApp" data-es="Teléfono / WhatsApp">Phone / WhatsApp</label>
+          <div class="phone-row">
+            <select class="phone-prefix" name="Phone_prefix">
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+34" selected>🇪🇸 +34</option>
+              <option value="+52">🇲🇽 +52</option>
+              <option value="+54">🇦🇷 +54</option>
+              <option value="+57">🇨🇴 +57</option>
+              <option value="+56">🇨🇱 +56</option>
+              <option value="+51">🇵🇪 +51</option>
+              <option value="+58">🇻🇪 +58</option>
+              <option value="+593">🇪🇨 +593</option>
+              <option value="+502">🇬🇹 +502</option>
+              <option value="+503">🇸🇻 +503</option>
+              <option value="+504">🇭🇳 +504</option>
+              <option value="+505">🇳🇮 +505</option>
+              <option value="+506">🇨🇷 +506</option>
+              <option value="+507">🇵🇦 +507</option>
+              <option value="+595">🇵🇾 +595</option>
+              <option value="+598">🇺🇾 +598</option>
+              <option value="+591">🇧🇴 +591</option>
+              <option value="+55">🇧🇷 +55</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+39">🇮🇹 +39</option>
+              <option value="+351">🇵🇹 +351</option>
+            </select>
+            <input type="tel" name="Phone" placeholder="600 000 000" style="flex:1">
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-en="Message *" data-es="Mensaje *">Message *</label>
+          <textarea name="Message" required rows="4"></textarea>
+        </div>
+        <p class="form-privacy">
+          <span data-en="By submitting this form you agree to our " data-es="Al enviar este formulario aceptas nuestra ">By submitting this form you agree to our </span><a href="privacy-policy.html" data-en="Privacy Policy" data-es="Política de Privacidad">Privacy Policy</a>.
+        </p>
+        <button type="submit" class="btn-submit" data-en="Send Message →" data-es="Enviar Mensaje →">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/3-logo-pura-group-llc.png" alt="Pura Group LLC">
+        <p data-en="Pura Group LLC — Professional digital services and business solutions. Based in the United States, serving clients globally." data-es="Pura Group LLC — Servicios digitales profesionales y soluciones empresariales. Con base en Estados Unidos, sirviendo clientes globalmente.">Pura Group LLC — Professional digital services and business solutions. Based in the United States, serving clients globally.</p>
+        <p style="margin-top:12px;font-size:0.88rem;"><a href="mailto:hello@pura-group.com" style="color:var(--purple-light)">hello@pura-group.com</a></p>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Services" data-es="Servicios">Services</h4>
+        <a href="#services" data-en="Digital Marketing" data-es="Marketing Digital">Digital Marketing</a>
+        <a href="#services" data-en="Automation" data-es="Automatización">Automation</a>
+        <a href="#services" data-en="Web Development" data-es="Desarrollo Web">Web Development</a>
+        <a href="#services" data-en="Consulting" data-es="Consultoría">Consulting</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Legal" data-es="Legal">Legal</h4>
+        <a href="legal-notice.html" data-en="Legal Notice" data-es="Aviso Legal">Legal Notice</a>
+        <a href="privacy-policy.html" data-en="Privacy Policy" data-es="Política de Privacidad">Privacy Policy</a>
+        <a href="cookie-policy.html" data-en="Cookie Policy" data-es="Política de Cookies">Cookie Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Pura Group LLC. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></span>
+      <span data-en="Digital Business & Global Services · Wyoming, United States" data-es="Digital Business & Global Services · Wyoming, Estados Unidos">Digital Business & Global Services · Wyoming, United States</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="btn-top" aria-label="Back to top">▲</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  let currentLang = localStorage.getItem('pg-lang') || 'en';
+
+  function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('pg-lang', lang);
+    document.documentElement.lang = lang;
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+    // Update form redirect URL based on language
+    const nextUrl = document.getElementById('form-next-url');
+    if (nextUrl) {
+      nextUrl.value = lang === 'es'
+        ? 'https://pura-group.com/gracias.html'
+        : 'https://pura-group.com/thank-you.html';
+    }
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const text = el.getAttribute('data-' + lang);
+      if (!text) return;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = text;
+      } else if (el.tagName === 'OPTION') {
+        el.textContent = text;
+      } else {
+        el.innerHTML = text;
+      }
+    });
+    // Cookie text
+    const cookieText = document.getElementById('cookie-text');
+    if (cookieText) {
+      if (lang === 'es') {
+        cookieText.innerHTML = 'Usamos cookies propias y de terceros para mejorar tu experiencia de navegación y analizar el uso del sitio. Para más información, visita nuestra página de <a href="cookie-policy.html">política de cookies</a>.';
+      } else {
+        cookieText.innerHTML = 'We use our own and third-party cookies to improve your browsing experience and analyze site usage. For more information, please visit our <a href="cookie-policy.html">cookie policy</a> page.';
+      }
+      document.getElementById('cookie-btn-reject').textContent = lang === 'es' ? 'Rechazar' : 'Decline';
+      document.getElementById('cookie-btn-accept').textContent = lang === 'es' ? 'Aceptar' : 'Accept';
+    }
+    document.title = lang === 'es'
+      ? 'Pura Group LLC | Servicios Digitales y Soluciones Empresariales'
+      : 'Pura Group LLC | Digital Services & Business Solutions';
+  }
+
+  setLang(currentLang);
+
+  if (localStorage.getItem('pg-cookies')) document.getElementById('cookie-banner').style.display = 'none';
+  function acceptCookies() { localStorage.setItem('pg-cookies', 'accepted'); document.getElementById('cookie-banner').style.display = 'none'; }
+  function closeCookies() { localStorage.setItem('pg-cookies', 'rejected'); document.getElementById('cookie-banner').style.display = 'none'; }
+
+  window.addEventListener('scroll', function() {
+    document.getElementById('btn-top').style.display = window.scrollY > 300 ? 'flex' : 'none';
+  }, { passive: true });
+</script>
+</body>
+</html>
