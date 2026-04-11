@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Notice | Pura Group LLC</title>
+  <link rel="icon" type="image/png" href="images/1-favicon-pura-group.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <style>
+    :root {
+      --purple: #7c6aaa;
+      --purple-dark: #5c4d8a;
+      --purple-light: #c4b8dc;
+      --purple-bg: #f4f1fa;
+      --black: #0d0d0d;
+      --white: #ffffff;
+      --gray: #f2f0f5;
+      --text: #1a1a2e;
+      --text-light: #5a5870;
+      --radius: 14px;
+      --shadow: 0 4px 28px rgba(124,106,170,0.10);
+      --shadow-lg: 0 16px 56px rgba(124,106,170,0.18);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); line-height: 1.7; font-size: 16px; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    .navbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 6%; background: var(--white); box-shadow: 0 1px 0 rgba(146,126,182,0.15); }
+    .navbar img { height: 44px; }
+    .lang-switcher { display: flex; gap: 8px; }
+    .lang-btn { background: none; border: none; cursor: pointer; opacity: 0.45; transition: opacity 0.2s; padding: 0; }
+    .lang-btn.active { opacity: 1; }
+    .lang-btn img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
+    .page-header { background: var(--black); color: white; padding: 60px 6%; text-align: center; }
+    .page-header h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 700; color: var(--purple-light); letter-spacing: 2px; }
+    .content { max-width: 820px; margin: 0 auto; padding: 60px 24px; }
+    .content h2 { font-family: 'DM Sans', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--black); margin: 32px 0 12px; }
+    .content p { color: var(--text-light); margin-bottom: 14px; font-size: 0.97rem; }
+    .content ul { color: var(--text-light); padding-left: 20px; margin-bottom: 14px; }
+    .content ul li { margin-bottom: 8px; font-size: 0.97rem; }
+    .content strong { color: var(--text); font-weight: 700; }
+    footer { background: var(--black); color: rgba(255,255,255,0.6); text-align: center; padding: 28px 6%; font-size: 0.85rem; }
+    footer a { color: rgba(255,255,255,0.5); transition: color 0.2s; margin: 0 8px; }
+    footer a:hover { color: var(--purple-light); }
+    .footer-links { margin-bottom: 12px; }
+  
+    /* COOKIE */
+    #cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+      background: #111; color: white; padding: 16px 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px; font-size: 0.88rem;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.4);
+      border-top: 1px solid rgba(124,106,170,0.3);
+    }
+    #cookie-banner a { color: var(--purple-light); text-decoration: underline; }
+    #cookie-text { flex: 1; min-width: 200px; }
+    .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
+    .btn-cookie { padding: 9px 22px; border-radius: 50px; font-weight: 600; font-size: 0.88rem; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
+    .btn-accept { background: var(--purple); color: white; }
+    .btn-reject { background: transparent; color: #999; border: 1px solid rgba(255,255,255,0.2); }
+    /* NAVBAR */
+    .navbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%; height: auto; min-height: 72px;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(124,106,170,0.12); position: sticky; top: 0; z-index: 100;
+    }
+    .navbar-logo img { height: 100px; width: auto; }
+    .navbar-center { display: flex; align-items: center; gap: 32px; margin-left: auto; margin-right: 32px; }
+    .navbar-center a { font-size: 0.9rem; font-weight: 500; color: var(--text-light); transition: color 0.2s; letter-spacing: 0.01em; }
+    .navbar-center a:hover { color: var(--purple); }
+    .navbar-right { display: flex; align-items: center; gap: 16px; }
+    .btn-nav {
+      background: var(--purple); color: white; padding: 11px 26px;
+      border-radius: 50px; font-weight: 600; font-size: 0.9rem;
+      font-family: 'DM Sans', sans-serif; transition: all 0.2s;
+      border: none; cursor: pointer; display: inline-block; white-space: nowrap;
+    }
+    .btn-nav:hover { background: var(--purple-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(124,106,170,0.35); }
+    .menu-toggle { display: none; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: var(--black); padding: 6px; }
+    /* MOBILE MENU */
+    .mobile-menu {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      background: white; box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+      padding: 20px 6%; z-index: 99; border-top: 1px solid #f2f0f5;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 12px 0; border-bottom: 1px solid #f2f0f5; font-weight: 500; font-size: 1rem; color: var(--text); }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu .btn-primary { margin-top: 16px; text-align: center; display: block; border-bottom: none; color: white; background: var(--purple); padding: 13px 30px; border-radius: 50px; font-weight: 600; }
+    /* FOOTER FULL */
+    footer { background: #080610; color: rgba(255,255,255,0.6); padding: 60px 6% 30px; }
+    .footer-inner { display: grid; grid-template-columns: 2.2fr 1fr 1fr; gap: 56px; margin-bottom: 48px; }
+    .footer-brand img { height: 80px; margin-bottom: 18px; filter: brightness(0) invert(1) opacity(0.8); }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.8; color: rgba(255,255,255,0.5); }
+    .footer-brand .footer-email { display: inline-block; margin-top: 14px; font-size: 0.88rem; color: var(--purple-light); }
+    .footer-col h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: white; margin-bottom: 18px; letter-spacing: 0.5px; }
+    .footer-col a { display: block; font-size: 0.88rem; margin-bottom: 11px; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .footer-col a:hover { color: var(--purple-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; flex-wrap: wrap; gap: 12px; color: rgba(255,255,255,0.35); }
+    /* SCROLL TOP */
+    #btn-top { position: fixed; bottom: 28px; right: 28px; z-index: 9998; background: var(--purple); color: white; width: 46px; height: 46px; border-radius: 50%; display: none; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.3); font-size: 1rem; transition: all 0.2s; }
+    #btn-top:hover { background: var(--purple-dark); transform: translateY(-2px); }
+    #btn-top.visible { display: flex; }
+    /* LANG SWITCHER */
+    .lang-switcher { display: flex; align-items: center; gap: 8px; margin-right: 16px; }
+    .lang-btn { background: none; border: none; cursor: pointer; opacity: 0.4; transition: opacity 0.2s; padding: 0; }
+    .lang-btn.active { opacity: 1; }
+    .lang-btn img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; display: block; }
+    /* RESPONSIVE NAV/FOOTER */
+    @media (max-width: 860px) { .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; } }
+    @media (max-width: 768px) {
+      .btn-nav { display: none; }
+      .menu-toggle { display: block; }
+      .navbar { position: relative; }
+      .navbar-logo img { height: 90px; }
+      .navbar-center { display: none; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .mobile-menu a { font-size: 1.125rem; }
+      .lang-switcher { margin-right: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <span id="cookie-text">We use our own and third-party cookies to improve your browsing experience and analyze site usage. For more information, please visit our <a href="cookie-policy.html">cookie policy</a> page.</span>
+  <div class="cookie-btns">
+    <button class="btn-cookie btn-reject" onclick="closeCookies()" id="cookie-btn-reject">Decline</button>
+    <button class="btn-cookie btn-accept" onclick="acceptCookies()" id="cookie-btn-accept">Accept</button>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" style="position:relative">
+  <a href="index.html" class="navbar-logo">
+    <img src="images/3-logo-pura-group-llc.png" alt="Pura Group LLC" width="150" height="100">
+  </a>
+  <div class="navbar-center">
+    <a href="index.html#about" data-en="About Us" data-es="Quiénes Somos">About Us</a>
+    <a href="index.html#services" data-en="Services" data-es="Servicios">Services</a>
+    <a href="index.html#process" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
+    <a href="index.html#reviews" data-en="Results" data-es="Resultados">Results</a>
+  </div>
+  <div class="navbar-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')" title="English"><img src="images/english.png" alt="EN"></button>
+      <button class="lang-btn" id="btn-es" onclick="setLang('es')" title="Español"><img src="images/espanol.png" alt="ES"></button>
+    </div>
+    <a href="index.html#contact" class="btn-nav" data-en="Get a Quote" data-es="Solicitar Consulta">Get a Quote</a>
+    <button class="menu-toggle" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">&#9776;</button>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html#about" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="About Us" data-es="Quiénes Somos">About Us</a>
+    <a href="index.html#services" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Services" data-es="Servicios">Services</a>
+    <a href="index.html#process" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
+    <a href="index.html#reviews" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Results" data-es="Resultados">Results</a>
+    <a href="index.html#contact" class="btn-primary" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Get a Quote" data-es="Solicitar Consulta">Get a Quote</a>
+  </div>
+</nav>
+
+  <div class="page-header">
+    <h1 id="page-title">LEGAL NOTICE</h1>
+  </div>
+
+  <div class="content" id="content-en">
+    <h2>1. Purpose of the Website</h2>
+    <p>The purpose of this website is to provide information about the corporate activity, services, business lines, and digital projects developed by <strong>PURA GROUP LLC</strong>, as well as to facilitate contact with the company for informational, professional, or commercial purposes.</p>
+    <p>Access to and use of this website implies full acceptance of this Legal Notice, together with the Privacy Policy and the Cookies Policy.</p>
+
+    <h2>2. Intellectual and Industrial Property</h2>
+    <p>All content on this website (including texts, images, graphics, logos, icons, design, structure, code, and other elements) is the property of <strong>PURA GROUP LLC</strong> or its legitimate owners and is protected by international intellectual and industrial property laws.</p>
+    <p>Any reproduction, distribution, public communication, transformation, or other unauthorized use of the content without the express written consent of <strong>PURA GROUP LLC</strong> is strictly prohibited.</p>
+    <p>Unauthorized use of the content may result in the corresponding legal actions.</p>
+
+    <h2>3. User Responsibility</h2>
+    <p>The user agrees to use this website in a lawful, responsible manner, in accordance with applicable laws, good faith, and public order.</p>
+    <p>Any use that may damage, overload, or impair the website, or that involves the use of its content for unlawful, fraudulent, or unauthorized purposes, is strictly prohibited.</p>
+
+    <h2>4. External Links</h2>
+    <p>This website may contain links to third-party websites. <strong>PURA GROUP LLC</strong> assumes no responsibility for the content, policies, practices, or availability of such external sites, nor for any damages that may arise from accessing or using them.</p>
+    <p>The inclusion of external links does not imply any relationship, endorsement, or approval by <strong>PURA GROUP LLC</strong>.</p>
+
+    <h2>5. Limitation of Liability</h2>
+    <p>The information contained on this website is provided for informational and corporate purposes only. <strong>PURA GROUP LLC</strong> does not guarantee the achievement of specific results derived from the use of the information published herein, as any business, commercial, or strategic decisions made by the user are taken under their sole responsibility.</p>
+    <p><strong>PURA GROUP LLC</strong> makes reasonable efforts to keep the information updated and the website operational but does not guarantee the absence of technical errors, interruptions, inaccuracies, or omissions, nor does it assume liability for damages arising from the use of this website.</p>
+
+    <h2>6. User-Submitted Content</h2>
+    <p>If users voluntarily submit content, materials, or communications to <strong>PURA GROUP LLC</strong> through the means provided on this website, they declare that they hold the necessary rights to such content and that it does not infringe the rights of third parties.</p>
+    <p><strong>PURA GROUP LLC</strong> reserves the right to use such content solely for corporate communication purposes, unless expressly stated otherwise.</p>
+
+    <h2>7. Website Ownership</h2>
+    <p><strong>Owner:</strong> PURA GROUP LLC<br>
+    <strong>Registered in:</strong> State of Wyoming, United States<br>
+    <strong>Address:</strong> 5830 E 2nd St, Ste 7000 #23371, Casper, WY 82609, USA<br>
+    <strong>Contact email:</strong> <a href="/cdn-cgi/l/email-protection#ea828f868685aa9a9f988bc78d98859f9ac4898587" style="color:var(--purple)"><span class="__cf_email__" data-cfemail="563e333a3a3916262324377b31243923267835393b">[email&#160;protected]</span></a></p>
+    <p>Any brands, products, or business lines mentioned on this website operate under the structure and management of <strong>PURA GROUP LLC</strong>.</p>
+  </div>
+
+  <div class="content" id="content-es" style="display:none">
+    <h2>1. Objeto del Sitio Web</h2>
+    <p>El presente sitio web tiene por objeto proporcionar información sobre la actividad corporativa, servicios, líneas de negocio y proyectos digitales desarrollados por <strong>PURA GROUP LLC</strong>, así como facilitar el contacto con la empresa para fines informativos, profesionales o comerciales.</p>
+    <p>El acceso y uso de este sitio web implica la aceptación plena del presente Aviso Legal, junto con la Política de Privacidad y la Política de Cookies.</p>
+
+    <h2>2. Propiedad Intelectual e Industrial</h2>
+    <p>Todos los contenidos del sitio web (incluyendo textos, imágenes, gráficos, logotipos, iconos, diseño, estructura, código y demás elementos) son propiedad de <strong>PURA GROUP LLC</strong> o de sus legítimos propietarios, y están protegidos por las leyes internacionales de propiedad intelectual e industrial.</p>
+    <p>Queda estrictamente prohibida cualquier reproducción, distribución, comunicación pública, transformación o cualquier otro uso no autorizado de los contenidos sin el consentimiento expreso y por escrito de <strong>PURA GROUP LLC</strong>.</p>
+    <p>El uso no autorizado de los contenidos podrá dar lugar a las correspondientes acciones legales.</p>
+
+    <h2>3. Responsabilidad del Usuario</h2>
+    <p>El usuario se compromete a utilizar este sitio web de forma lícita, responsable, de conformidad con las leyes aplicables, la buena fe y el orden público.</p>
+    <p>Queda prohibido cualquier uso que pueda dañar, sobrecargar o deteriorar el sitio web, o que implique el uso de sus contenidos con fines ilícitos, fraudulentos o no autorizados.</p>
+
+    <h2>4. Enlaces Externos</h2>
+    <p>El sitio web puede contener enlaces a sitios web de terceros. <strong>PURA GROUP LLC</strong> no asume ninguna responsabilidad sobre el contenido, políticas, prácticas o disponibilidad de dichos sitios externos, ni por los daños que puedan derivarse del acceso o uso de los mismos.</p>
+    <p>La inclusión de enlaces externos no implica ninguna relación, respaldo o aprobación por parte de <strong>PURA GROUP LLC</strong>.</p>
+
+    <h2>5. Limitación de Responsabilidad</h2>
+    <p>La información contenida en este sitio web se facilita con carácter meramente informativo y corporativo. <strong>PURA GROUP LLC</strong> no garantiza la consecución de resultados específicos derivados del uso de la información aquí publicada, siendo las decisiones empresariales, comerciales o estratégicas que tome el usuario de su exclusiva responsabilidad.</p>
+    <p><strong>PURA GROUP LLC</strong> realiza esfuerzos razonables para mantener la información actualizada y el sitio operativo, pero no garantiza la ausencia de errores técnicos, interrupciones, inexactitudes u omisiones, ni asume responsabilidad por los daños derivados del uso del sitio.</p>
+
+    <h2>6. Contenido Aportado por el Usuario</h2>
+    <p>Si los usuarios envían voluntariamente contenidos, materiales o comunicaciones a <strong>PURA GROUP LLC</strong> a través de los medios habilitados en este sitio web, declaran que ostentan los derechos necesarios sobre dichos contenidos y que estos no infringen derechos de terceros.</p>
+    <p><strong>PURA GROUP LLC</strong> se reserva el derecho de utilizar dichos contenidos exclusivamente con fines de comunicación corporativa, salvo indicación expresa en contrario.</p>
+
+    <h2>7. Titularidad del Sitio Web</h2>
+    <p><strong>Titular:</strong> PURA GROUP LLC<br>
+    <strong>Registrada en:</strong> Estado de Wyoming, Estados Unidos<br>
+    <strong>Dirección:</strong> 5830 E 2nd St, Ste 7000 #23371, Casper, WY 82609, USA<br>
+    <strong>Email de contacto:</strong> <a href="/cdn-cgi/l/email-protection#e78f828b8b88a797929586ca8095889297c984888a" style="color:var(--purple)"><span class="__cf_email__" data-cfemail="a8c0cdc4c4c7e8d8dddac985cfdac7ddd886cbc7c5">[email&#160;protected]</span></a></p>
+    <p>Cualquier marca, producto o línea de negocio mencionada en este sitio web opera bajo la estructura y gestión de <strong>PURA GROUP LLC</strong>.</p>
+  </div>
+
+  <!-- FOOTER -->
+<footer>
+  <div style="max-width:1120px;margin:0 auto;">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/3-logo-pura-group-llc.png" alt="Pura Group LLC">
+        <p data-en="Pura Group LLC — We build digital businesses from start to finish. Global operation, bilingual team, results-focused." data-es="Pura Group LLC — Construimos negocios digitales de principio a fin. Operación global, equipo bilingüe, enfoque en resultados.">Pura Group LLC — We build digital businesses from start to finish. Global operation, bilingual team, results-focused.</p>
+        <a href="mailto:hello@pura-group.com" class="footer-email">hello@pura-group.com</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Services" data-es="Servicios">Services</h4>
+        <a href="index.html#services" data-en="Strategy &amp; Validation" data-es="Estrategia y Validación">Strategy &amp; Validation</a>
+        <a href="index.html#services" data-en="Brand &amp; Copywriting" data-es="Marca y Copywriting">Brand &amp; Copywriting</a>
+        <a href="index.html#services" data-en="Web Development" data-es="Desarrollo Web">Web Development</a>
+        <a href="index.html#services" data-en="Advertising" data-es="Captación y Publicidad">Advertising</a>
+        <a href="index.html#services" data-en="Automation &amp; CRM" data-es="Automatización y CRM">Automation &amp; CRM</a>
+        <a href="index.html#services" data-en="Digital Marketing" data-es="Marketing Digital">Digital Marketing</a>
+        <a href="index.html#services" data-en="Analytics &amp; Reporting" data-es="Análisis y Reporting">Analytics &amp; Reporting</a>
+        <a href="index.html#services" data-en="Global Consulting" data-es="Consultoría Global">Global Consulting</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Legal" data-es="Legal">Legal</h4>
+        <a href="legal-notice.html" data-en="Legal Notice" data-es="Aviso Legal">Legal Notice</a>
+        <a href="privacy-policy.html" data-en="Privacy Policy" data-es="Política de Privacidad">Privacy Policy</a>
+        <a href="cookie-policy.html" data-en="Cookie Policy" data-es="Política de Cookies">Cookie Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Pura Group LLC. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></span>
+      <span data-en="Digital Business &amp; Global Services" data-es="Digital Business &amp; Global Services">Digital Business &amp; Global Services</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="btn-top" aria-label="Back to top">&#9650;</a>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    let lang = localStorage.getItem('pg-lang') || 'en';
+    function setLang(l) {
+      lang = l; localStorage.setItem('pg-lang', l);
+      document.getElementById('btn-en').classList.toggle('active', l === 'en');
+      document.getElementById('btn-es').classList.toggle('active', l === 'es');
+      document.getElementById('content-en').style.display = l === 'en' ? 'block' : 'none';
+      document.getElementById('content-es').style.display = l === 'es' ? 'block' : 'none';
+      document.getElementById('page-title').textContent = l === 'es' ? 'AVISO LEGAL' : 'LEGAL NOTICE';
+      document.title = l === 'es' ? 'Aviso Legal | Pura Group LLC' : 'Legal Notice | Pura Group LLC';
+ 
