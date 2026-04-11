@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pura Group LLC | Construimos tu Negocio Digital de Principio a Fin</title>
-  <meta name="description" content="Validamos tu idea, diseñamos tu marca, automatizamos tus procesos y captamos clientes. Todo lo que necesitas para crecer, bajo un mismo equipo.">
+  <title>Pura Group LLC | Digital Services &amp; Business Solutions</title>
+  <meta name="description" content="We validate your idea, design your brand, automate your processes and attract clients. Everything you need to grow, under one team.">
   <link rel="icon" type="image/png" href="images/1-favicon-pura-group.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pura-group.com/">
-  <meta property="og:title" content="Pura Group LLC | Construimos tu Negocio Digital de Principio a Fin">
-  <meta property="og:description" content="Validamos tu idea, diseñamos tu marca, automatizamos tus procesos y captamos clientes. Todo lo que necesitas para crecer, bajo un mismo equipo.">
+  <meta property="og:title" content="Pura Group LLC | Digital Services &amp; Business Solutions">
+  <meta property="og:description" content="We validate your idea, design your brand, automate your processes and attract clients. Everything you need to grow, under one team.">
   <meta property="og:image" content="https://pura-group.com/images/og-logo.png">
-  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Pura Group LLC">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,6 +56,12 @@
     .btn-accept { background: var(--purple); color: white; }
     .btn-reject { background: transparent; color: #999; border: 1px solid rgba(255,255,255,0.2); }
 
+    /* LANG SWITCHER */
+    .lang-switcher { display: flex; align-items: center; gap: 8px; margin-right: 16px; }
+    .lang-btn { background: none; border: none; cursor: pointer; opacity: 0.4; transition: opacity 0.2s; padding: 0; }
+    .lang-btn.active { opacity: 1; }
+    .lang-btn img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; display: block; }
+
     /* NAVBAR */
     .navbar {
       display: flex; align-items: center; justify-content: space-between;
@@ -63,7 +69,7 @@
       background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
       box-shadow: 0 1px 0 rgba(124,106,170,0.12); position: sticky; top: 0; z-index: 100;
     }
-    .navbar-logo img { height: 80px; width: auto; }
+    .navbar-logo img { height: 100px; width: auto; }
     .navbar-center { display: flex; align-items: center; gap: 32px; margin-left: auto; margin-right: 32px; }
     .navbar-center a { font-size: 0.9rem; font-weight: 500; color: var(--text-light); transition: color 0.2s; letter-spacing: 0.01em; }
     .navbar-center a:hover { color: var(--purple); }
@@ -87,6 +93,7 @@
     .mobile-menu a { display: block; padding: 12px 0; border-bottom: 1px solid var(--gray); font-weight: 500; font-size: 1rem; color: var(--text); }
     .mobile-menu a:last-child { border-bottom: none; }
     .mobile-menu .btn-primary { margin-top: 16px; text-align: center; display: block; border-bottom: none; }
+    .mobile-lang { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--gray); }
 
     /* HERO */
     .hero {
@@ -159,9 +166,9 @@
     .about-text p { color: var(--text-light); margin-bottom: 18px; font-size: 0.97rem; line-height: 1.8; }
     .about-checks { margin: 28px 0 36px; display: flex; flex-direction: column; gap: 14px; }
     .about-check { display: flex; align-items: flex-start; gap: 13px; font-size: 0.96rem; color: var(--text); }
-    .about-check::before { content: "✦"; color: var(--purple); font-size: 0.85rem; margin-top: 4px; flex-shrink: 0; }
+    .about-check::before { content: "\2726"; color: var(--purple); font-size: 0.85rem; margin-top: 4px; flex-shrink: 0; }
 
-    /* VALUE PROP — dark section */
+    /* VALUE PROP */
     .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; }
     .value-card { background: rgba(255,255,255,0.04); padding: 48px 36px; border: 1px solid rgba(255,255,255,0.07); transition: background 0.3s; }
     .value-card:hover { background: rgba(124,106,170,0.12); }
@@ -178,13 +185,13 @@
       transition: box-shadow 0.2s, transform 0.2s;
     }
     .service-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
-    .service-img { width: 100%; height: 200px; object-fit: contain; border-radius: 10px; margin-bottom: 18px; background: #0d0d0d; }
-    .service-num { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--purple-light); font-weight: 700; letter-spacing: 1.5px; margin-bottom: 6px; }
-    .service-card h3 { font-size: 1.25rem; font-weight: 700; color: var(--black); margin-bottom: 10px; line-height: 1.2; }
+    .service-img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; border-radius: 10px; margin-bottom: 18px; background: transparent; }
+    .service-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--purple-light); font-weight: 700; letter-spacing: 1.5px; margin-bottom: 0; line-height: 1; }
+    .service-card h3 { font-size: 1.6rem; font-weight: 700; color: var(--black); margin-bottom: 10px; line-height: 1.2; }
     .service-card p { font-size: 0.93rem; color: var(--text-light); line-height: 1.8; margin-bottom: 16px; flex: 1; }
     .service-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 7px; margin-top: 16px; }
     .service-bullets li { font-size: 0.88rem; color: var(--text-light); padding-left: 22px; position: relative; line-height: 1.6; }
-    .service-bullets li::before { content: '✓'; position: absolute; left: 0; color: var(--purple); font-size: 0.95rem; font-weight: 700; line-height: 1.6; }
+    .service-bullets li::before { content: '\2713'; position: absolute; left: 0; color: var(--purple); font-size: 0.95rem; font-weight: 700; line-height: 1.6; }
 
     /* PROCESS */
     .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 20px; position: relative; }
@@ -192,7 +199,7 @@
     .process-step { text-align: center; padding: 0 20px 0; position: relative; }
     .process-num {
       width: 52px; height: 52px; border-radius: 50%; background: var(--purple); color: white;
-      font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700;
       display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;
       position: relative; z-index: 1; box-shadow: 0 0 0 6px var(--purple-bg);
     }
@@ -213,8 +220,8 @@
     }
     .review-stars { color: #f4a623; font-size: 1rem; letter-spacing: 2px; }
     .review-text { font-size: 0.94rem; color: var(--text-light); line-height: 1.85; font-style: italic; flex: 1; }
-    .review-text::before { content: '"'; }
-    .review-text::after { content: '"'; }
+    .review-text::before { content: '\201C'; }
+    .review-text::after { content: '\201D'; }
     .review-author { display: flex; flex-direction: column; gap: 3px; padding-top: 16px; border-top: 1px solid var(--gray); }
     .review-name { font-weight: 700; font-size: 0.95rem; color: var(--text); }
     .review-role { font-size: 0.83rem; color: var(--purple); }
@@ -263,7 +270,6 @@
 
     /* DIVIDER */
     .divider { width: 48px; height: 2px; background: var(--purple); margin: 0 auto 48px; border-radius: 2px; }
-    .divider.left { margin: 0 0 32px; }
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
@@ -277,14 +283,14 @@
       .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
     }
     @media (max-width: 768px) {
-      body { font-size: 16px; }
       .hero { background-image: url('images/3-foto-header-movil-pura-group.webp'); background-position: center top; }
       .hero h1 { font-size: 2.4rem; }
       .hero-content { padding: 60px 6%; }
+      .hero-sub { margin-bottom: 300px; }
       .btn-nav { display: none; }
       .menu-toggle { display: block; }
       .navbar { position: relative; }
-      .navbar-logo img { height: 80px; }
+      .navbar-logo img { height: 90px; }
       .navbar-center { display: none; }
       .btn-primary, .btn-outline { display: block; width: 100%; box-sizing: border-box; min-width: unset; }
       .hero-btns { flex-direction: column; align-items: stretch; }
@@ -296,14 +302,30 @@
       .footer-inner { grid-template-columns: 1fr; gap: 32px; }
       .section { padding: 72px 5%; }
       .section-title { font-size: 2.1rem; }
+      h2 { font-size: 2.1rem; }
       .stats-bar { grid-template-columns: 1fr; }
       .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
       .stat-item:last-child { border-bottom: none; }
       .stat-num { font-size: 6rem; }
       .stat-label { font-size: 1.3rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
-      .form-group input, .form-group textarea, .form-group select, .phone-prefix { font-size: 16px !important; }
+      .form-group input, .form-group textarea, .form-group select { font-size: 18px !important; }
       .services-list { grid-template-columns: 1fr; }
+      .service-num { font-size: 4rem; margin-bottom: 0; line-height: 1; }
+      .service-card h3 { font-size: 1.7rem; }
+      .service-card p { font-size: 1.125rem; }
+      .service-bullets li { font-size: 1.1rem; }
+      .process-num { font-size: 1.8rem !important; }
+      .process-step h3 { font-size: 1.7rem; }
+      .process-step p { font-size: 1.1rem; }
+      .section-sub { font-size: 1.125rem; }
+      .about-text p { font-size: 1.125rem; }
+      .about-check { font-size: 1.125rem; }
+      .global-intro { font-size: 1.125rem; }
+      .review-text { font-size: 1.125rem; }
+      .value-card p { font-size: 1.125rem; }
+      .mobile-menu a { font-size: 1.125rem; }
+      .lang-switcher { margin-right: 8px; }
     }
   </style>
 </head>
@@ -311,46 +333,54 @@
 
 <!-- COOKIE BANNER -->
 <div id="cookie-banner">
-  <span id="cookie-text">Usamos cookies propias y de terceros para mejorar tu experiencia de navegación y analizar el uso del sitio. Para más información, visita nuestra <a href="cookie-policy.html">política de cookies</a>.</span>
+  <span id="cookie-text">We use our own and third-party cookies to improve your browsing experience and analyze site usage. For more information, please visit our <a href="cookie-policy.html">cookie policy</a> page.</span>
   <div class="cookie-btns">
-    <button class="btn-cookie btn-reject" onclick="closeCookies()" id="cookie-btn-reject">Rechazar</button>
-    <button class="btn-cookie btn-accept" onclick="acceptCookies()" id="cookie-btn-accept">Aceptar</button>
+    <button class="btn-cookie btn-reject" onclick="closeCookies()" id="cookie-btn-reject">Decline</button>
+    <button class="btn-cookie btn-accept" onclick="acceptCookies()" id="cookie-btn-accept">Accept</button>
   </div>
 </div>
 
 <!-- NAVBAR -->
 <nav class="navbar" style="position:relative">
   <a href="index.html" class="navbar-logo">
-    <img src="images/3-logo-pura-group-llc.png" alt="Pura Group LLC" width="150" height="80">
+    <img src="images/3-logo-pura-group-llc.png" alt="Pura Group LLC" width="150" height="100">
   </a>
   <div class="navbar-center">
-    <a href="#about">Quiénes Somos</a>
-    <a href="#services">Servicios</a>
-    <a href="#process">Cómo Trabajamos</a>
-    <a href="#reviews">Resultados</a>
+    <a href="#about" data-en="About Us" data-es="Quiénes Somos">About Us</a>
+    <a href="#services" data-en="Services" data-es="Servicios">Services</a>
+    <a href="#process" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
+    <a href="#reviews" data-en="Results" data-es="Resultados">Results</a>
   </div>
   <div class="navbar-right">
-    <a href="#contact" class="btn-nav">Solicitar Consulta</a>
-    <button class="menu-toggle" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">☰</button>
+    <div class="lang-switcher">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')" title="English"><img src="images/english.png" alt="EN"></button>
+      <button class="lang-btn" id="btn-es" onclick="setLang('es')" title="Español"><img src="images/espanol.png" alt="ES"></button>
+    </div>
+    <a href="#contact" class="btn-nav" data-en="Get a Quote" data-es="Solicitar Consulta">Get a Quote</a>
+    <button class="menu-toggle" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">&#9776;</button>
   </div>
   <div class="mobile-menu">
-    <a href="#about" onclick="this.closest('.mobile-menu').classList.remove('open')">Quiénes Somos</a>
-    <a href="#services" onclick="this.closest('.mobile-menu').classList.remove('open')">Servicios</a>
-    <a href="#process" onclick="this.closest('.mobile-menu').classList.remove('open')">Cómo Trabajamos</a>
-    <a href="#reviews" onclick="this.closest('.mobile-menu').classList.remove('open')">Resultados</a>
-    <a href="#contact" class="btn-primary" onclick="this.closest('.mobile-menu').classList.remove('open')">Solicitar Consulta</a>
+    <div class="mobile-lang">
+      <button class="lang-btn active" id="btn-en-m" onclick="setLang('en')" title="English"><img src="images/english.png" alt="EN"></button>
+      <button class="lang-btn" id="btn-es-m" onclick="setLang('es')" title="Español"><img src="images/espanol.png" alt="ES"></button>
+    </div>
+    <a href="#about" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="About Us" data-es="Quiénes Somos">About Us</a>
+    <a href="#services" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Services" data-es="Servicios">Services</a>
+    <a href="#process" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
+    <a href="#reviews" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Results" data-es="Resultados">Results</a>
+    <a href="#contact" class="btn-primary" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Get a Quote" data-es="Solicitar Consulta">Get a Quote</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <span class="hero-tag">Servicios Digitales · Soluciones Empresariales</span>
-    <h1>Tu Idea, Convertida en un<br><span>Negocio Digital Real</span></h1>
-    <p class="hero-sub">Somos el equipo que valida tu concepto, construye tu marca, diseña tu estrategia, automatiza tus procesos y te trae clientes. De principio a fin, sin que tengas que coordinar a diez proveedores distintos.</p>
+    <span class="hero-tag" data-en="Digital Services · Business Solutions" data-es="Servicios Digitales · Soluciones Empresariales">Digital Services · Business Solutions</span>
+    <h1 data-en="Your Idea, Turned Into a<br><span>Real Digital Business</span>" data-es="Tu Idea, Convertida en un<br><span>Negocio Digital Real</span>">Your Idea, Turned Into a<br><span>Real Digital Business</span></h1>
+    <p class="hero-sub" data-en="We are the team that validates your concept, builds your brand, designs your strategy, automates your processes and brings you clients. End to end, without you having to coordinate ten different providers." data-es="Somos el equipo que valida tu concepto, construye tu marca, diseña tu estrategia, automatiza tus procesos y te trae clientes. De principio a fin, sin que tengas que coordinar a diez proveedores distintos.">We are the team that validates your concept, builds your brand, designs your strategy, automates your processes and brings you clients. End to end, without you having to coordinate ten different providers.</p>
     <div class="hero-btns">
-      <a href="#contact" class="btn-primary">Cuéntanos Tu Proyecto →</a>
-      <a href="#services" class="btn-outline">Ver Nuestros Servicios</a>
+      <a href="#contact" class="btn-primary" data-en="Tell Us About Your Project &rarr;" data-es="Cuéntanos Tu Proyecto &rarr;">Tell Us About Your Project &rarr;</a>
+      <a href="#services" class="btn-outline" data-en="See Our Services" data-es="Ver Nuestros Servicios">See Our Services</a>
     </div>
   </div>
 </section>
@@ -359,15 +389,15 @@
 <div class="stats-bar">
   <div class="stat-item">
     <div class="stat-num">150+</div>
-    <div class="stat-label">Proyectos Completados</div>
+    <div class="stat-label" data-en="Projects Completed" data-es="Proyectos Completados">Projects Completed</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">+6</div>
-    <div class="stat-label">Años de Experiencia</div>
+    <div class="stat-label" data-en="Years of Experience" data-es="Años de Experiencia">Years of Experience</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">40+</div>
-    <div class="stat-label">Clientes en el Mundo</div>
+    <div class="stat-label" data-en="Clients Worldwide" data-es="Clientes en el Mundo">Clients Worldwide</div>
   </div>
 </div>
 
@@ -376,21 +406,21 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-img">
-        <img src="images/6-PURA-GROUP-LLC-PEOPLE-1.png" alt="Equipo Pura Group">
+        <img src="images/6-PURA-GROUP-LLC-PEOPLE-1.png" alt="Pura Group Team">
       </div>
       <div class="about-text">
-        <span class="section-label">Quiénes Somos</span>
-        <h2>Un Equipo que Construye Negocios Digitales, <span style="color:var(--purple)">No Solo Páginas Web</span></h2>
-        <p>Pura Group es una empresa con presencia operativa en cualquier parte del mundo. Llevamos más de 6 años ayudando a empresas y emprendedores a convertir ideas en negocios digitales funcionales, rentables y escalables.</p>
-        <p>No somos una agencia de servicios sueltos. Somos el socio estratégico que te acompaña desde el primer día: cuando la idea todavía es solo un concepto, hasta el momento en que tienes un negocio en marcha, generando clientes de manera constante y automatizada.</p>
-        <p>Trabajamos con empresas medianas, grandes y con proyectos de nueva creación que quieren crecer con seriedad, sin desperdiciar tiempo ni dinero en soluciones a medias.</p>
+        <span class="section-label" data-en="Who We Are" data-es="Quiénes Somos">Who We Are</span>
+        <h2 data-en="A Team That Builds Digital Businesses, <span style='color:var(--purple)'>Not Just Websites</span>" data-es="Un Equipo que Construye Negocios Digitales, <span style='color:var(--purple)'>No Solo Páginas Web</span>">A Team That Builds Digital Businesses, <span style="color:var(--purple)">Not Just Websites</span></h2>
+        <p data-en="Pura Group is a company with operational presence anywhere in the world. We have been helping businesses and entrepreneurs turn ideas into functional, profitable and scalable digital businesses for over 6 years." data-es="Pura Group es una empresa con presencia operativa en cualquier parte del mundo. Llevamos más de 6 años ayudando a empresas y emprendedores a convertir ideas en negocios digitales funcionales, rentables y escalables.">Pura Group is a company with operational presence anywhere in the world. We have been helping businesses and entrepreneurs turn ideas into functional, profitable and scalable digital businesses for over 6 years.</p>
+        <p data-en="We are not a loose services agency. We are the strategic partner that accompanies you from day one: when the idea is still just a concept, until you have a business up and running, generating clients constantly and automatically." data-es="No somos una agencia de servicios sueltos. Somos el socio estratégico que te acompaña desde el primer día: cuando la idea todavía es solo un concepto, hasta el momento en que tienes un negocio en marcha, generando clientes de manera constante y automatizada.">We are not a loose services agency. We are the strategic partner that accompanies you from day one: when the idea is still just a concept, until you have a business up and running, generating clients constantly and automatically.</p>
+        <p data-en="We work with medium and large companies and new projects that want to grow seriously, without wasting time or money on half-measures." data-es="Trabajamos con empresas medianas, grandes y con proyectos de nueva creación que quieren crecer con seriedad, sin desperdiciar tiempo ni dinero en soluciones a medias.">We work with medium and large companies and new projects that want to grow seriously, without wasting time or money on half-measures.</p>
         <div class="about-checks">
-          <div class="about-check">Equipo bilingüe — inglés y español</div>
-          <div class="about-check">Operación global, accesible desde cualquier lugar</div>
-          <div class="about-check">Enfoque en resultados medibles</div>
-          <div class="about-check">Un solo equipo, todo el proyecto</div>
+          <div class="about-check" data-en="Bilingual team — English and Spanish" data-es="Equipo bilingüe — inglés y español">Bilingual team — English and Spanish</div>
+          <div class="about-check" data-en="Global operation, accessible from anywhere" data-es="Operación global, accesible desde cualquier lugar">Global operation, accessible from anywhere</div>
+          <div class="about-check" data-en="Focus on measurable results" data-es="Enfoque en resultados medibles">Focus on measurable results</div>
+          <div class="about-check" data-en="One team, the whole project" data-es="Un solo equipo, todo el proyecto">One team, the whole project</div>
         </div>
-        <a href="#contact" class="btn-primary">Trabaja Con Nosotros</a>
+        <a href="#contact" class="btn-primary" data-en="Work With Us" data-es="Trabaja Con Nosotros">Work With Us</a>
       </div>
     </div>
   </div>
@@ -399,25 +429,25 @@
 <!-- VALUE PROP -->
 <section class="section section-deep">
   <div class="container text-center">
-    <span class="section-label light">Nuestra Propuesta</span>
-    <h2 class="section-title light">Lo Que Ningún Proveedor<br>Por Separado Puede Darte</h2>
+    <span class="section-label light" data-en="Our Value Proposition" data-es="Nuestra Propuesta">Our Value Proposition</span>
+    <h2 class="section-title light" data-en="What No Single Provider<br>Can Give You Separately" data-es="Lo Que Ningún Proveedor<br>Por Separado Puede Darte">What No Single Provider<br>Can Give You Separately</h2>
     <div class="divider"></div>
-    <p class="section-sub light" style="margin-bottom:0">Contratar por separado un consultor, un diseñador, un programador, un especialista en publicidad y un automatizador te puede costar entre 3 y 5 veces más. Y además tienes que coordinarlos tú.</p>
+    <p class="section-sub light" style="margin-bottom:0" data-en="Hiring separately a consultant, designer, developer, advertising specialist and automation expert can cost 3 to 5 times more. And you also have to coordinate them yourself." data-es="Contratar por separado un consultor, un diseñador, un programador, un especialista en publicidad y un automatizador te puede costar entre 3 y 5 veces más. Y además tienes que coordinarlos tú.">Hiring separately a consultant, designer, developer, advertising specialist and automation expert can cost 3 to 5 times more. And you also have to coordinate them yourself.</p>
     <div class="value-grid">
       <div class="value-card">
-        <div class="value-icon">💰</div>
-        <h3>Ahorro Real de Costes</h3>
-        <p>Todo bajo un mismo equipo, sin márgenes cruzados ni duplicidades. Un proyecto, un interlocutor, una factura.</p>
+        <div class="value-icon">&#128176;</div>
+        <h3 data-en="Real Cost Savings" data-es="Ahorro Real de Costes">Real Cost Savings</h3>
+        <p data-en="Everything under one team, without cross-margins or duplications. One project, one contact, one invoice." data-es="Todo bajo un mismo equipo, sin márgenes cruzados ni duplicidades. Un proyecto, un interlocutor, una factura.">Everything under one team, without cross-margins or duplications. One project, one contact, one invoice.</p>
       </div>
       <div class="value-card">
-        <div class="value-icon">⚡</div>
-        <h3>Velocidad de Ejecución</h3>
-        <p>No esperamos a que otro proveedor entregue para poder avanzar. Somos todo el equipo. Las decisiones se toman en horas, no en semanas.</p>
+        <div class="value-icon">&#9889;</div>
+        <h3 data-en="Execution Speed" data-es="Velocidad de Ejecución">Execution Speed</h3>
+        <p data-en="We don't wait for another provider to deliver before we can move forward. We are the whole team. Decisions are made in hours, not weeks." data-es="No esperamos a que otro proveedor entregue para poder avanzar. Somos todo el equipo. Las decisiones se toman en horas, no en semanas.">We don't wait for another provider to deliver before we can move forward. We are the whole team. Decisions are made in hours, not weeks.</p>
       </div>
       <div class="value-card">
-        <div class="value-icon">🎯</div>
-        <h3>Visión Global del Negocio</h3>
-        <p>Cada pieza está diseñada para encajar con las demás. Estrategia, marca, web, captación y automatización van en la misma dirección.</p>
+        <div class="value-icon">&#127919;</div>
+        <h3 data-en="Global Business Vision" data-es="Visión Global del Negocio">Global Business Vision</h3>
+        <p data-en="Each piece is designed to fit the others. Strategy, brand, web, acquisition and automation all go in the same direction." data-es="Cada pieza está diseñada para encajar con las demás. Estrategia, marca, web, captación y automatización van en la misma dirección.">Each piece is designed to fit the others. Strategy, brand, web, acquisition and automation all go in the same direction.</p>
       </div>
     </div>
   </div>
@@ -427,112 +457,112 @@
 <section class="section" id="services">
   <div class="container">
     <div class="text-center">
-      <span class="section-label">Lo Que Hacemos</span>
-      <h2 class="section-title">De la Idea al Negocio <span>en Marcha</span></h2>
+      <span class="section-label" data-en="What We Do" data-es="Lo Que Hacemos">What We Do</span>
+      <h2 class="section-title" data-en="From Idea to <span>Running Business</span>" data-es="De la Idea al Negocio <span>en Marcha</span>">From Idea to <span>Running Business</span></h2>
       <div class="divider"></div>
-      <p class="section-sub">Esto es lo que ocurre cuando un cliente llega a Pura Group con un proyecto. No vendemos pasos sueltos; construimos el camino completo. Y si solo necesitas uno de estos bloques, también trabajamos así.</p>
+      <p class="section-sub" data-en="This is what happens when a client arrives at Pura Group with a project. We don't sell loose steps; we build the complete path. And if you only need one of these blocks, we work that way too." data-es="Esto es lo que ocurre cuando un cliente llega a Pura Group con un proyecto. No vendemos pasos sueltos; construimos el camino completo. Y si solo necesitas uno de estos bloques, también trabajamos así.">This is what happens when a client arrives at Pura Group with a project. We don't sell loose steps; we build the complete path. And if you only need one of these blocks, we work that way too.</p>
     </div>
     <div class="services-list">
 
       <div class="service-card">
-        <img src="images/service-1.png" alt="Validación y Estrategia" class="service-img">
+        <img src="images/service-1.png" alt="" class="service-img">
         <div class="service-num">01</div>
-        <h3>Validación y Estrategia de Negocio</h3>
-        <p>Antes de invertir un solo euro en publicidad o tecnología, analizamos si tu idea tiene mercado real. Estudiamos el producto, el sector, la competencia y el cliente ideal. Definimos el posicionamiento, el modelo de negocio y el plan de acción.</p>
+        <h3 data-en="Business Validation &amp; Strategy" data-es="Validación y Estrategia de Negocio">Business Validation &amp; Strategy</h3>
+        <p data-en="Before investing a single dollar in advertising or technology, we analyze whether your idea has a real market. We study the product, sector, competition and ideal client. We define the positioning, business model and action plan." data-es="Antes de invertir un solo euro en publicidad o tecnología, analizamos si tu idea tiene mercado real. Estudiamos el producto, el sector, la competencia y el cliente ideal. Definimos el posicionamiento, el modelo de negocio y el plan de acción.">Before investing a single dollar in advertising or technology, we analyze whether your idea has a real market. We study the product, sector, competition and ideal client. We define the positioning, business model and action plan.</p>
         <ul class="service-bullets">
-          <li>Estudio de mercado y análisis de competencia</li>
-          <li>Definición del cliente ideal y mapa de dolores y beneficios</li>
-          <li>Propuesta de valor y mensaje central</li>
-          <li>Estrategia de negocio y hoja de ruta</li>
+          <li data-en="Market research and competitive analysis" data-es="Estudio de mercado y análisis de competencia">Market research and competitive analysis</li>
+          <li data-en="Ideal client definition and pain/benefit map" data-es="Definición del cliente ideal y mapa de dolores y beneficios">Ideal client definition and pain/benefit map</li>
+          <li data-en="Value proposition and core message" data-es="Propuesta de valor y mensaje central">Value proposition and core message</li>
+          <li data-en="Business strategy and roadmap" data-es="Estrategia de negocio y hoja de ruta">Business strategy and roadmap</li>
         </ul>
       </div>
 
       <div class="service-card">
-        <img src="images/service-2.png" alt="Marca e Identidad" class="service-img">
+        <img src="images/service-2.png" alt="" class="service-img">
         <div class="service-num">02</div>
-        <h3>Marca, Identidad y Copywriting</h3>
-        <p>Creamos la identidad visual y verbal de tu empresa. Logo, paleta, tipografía, tono de voz y mensajes clave. Una marca que transmite credibilidad, coherencia y diferenciación desde el primer contacto.</p>
+        <h3 data-en="Brand, Identity &amp; Copywriting" data-es="Marca, Identidad y Copywriting">Brand, Identity &amp; Copywriting</h3>
+        <p data-en="We create the visual and verbal identity of your company. Logo, palette, typography, tone of voice and key messages. A brand that conveys credibility, coherence and differentiation from the first contact." data-es="Creamos la identidad visual y verbal de tu empresa. Logo, paleta, tipografía, tono de voz y mensajes clave. Una marca que transmite credibilidad, coherencia y diferenciación desde el primer contacto.">We create the visual and verbal identity of your company. Logo, palette, typography, tone of voice and key messages. A brand that conveys credibility, coherence and differentiation from the first contact.</p>
         <ul class="service-bullets">
-          <li>Branding completo: logo, colores, tipografía, guía de marca</li>
-          <li>Copywriting estratégico: textos que venden y posicionan</li>
-          <li>Comunicación adaptada a cada canal y audiencia</li>
+          <li data-en="Full branding: logo, colors, typography, brand guide" data-es="Branding completo: logo, colores, tipografía, guía de marca">Full branding: logo, colors, typography, brand guide</li>
+          <li data-en="Strategic copywriting: texts that sell and position" data-es="Copywriting estratégico: textos que venden y posicionan">Strategic copywriting: texts that sell and position</li>
+          <li data-en="Communication adapted to each channel and audience" data-es="Comunicación adaptada a cada canal y audiencia">Communication adapted to each channel and audience</li>
         </ul>
       </div>
 
       <div class="service-card">
-        <img src="images/service-3.png" alt="Desarrollo Web" class="service-img">
+        <img src="images/service-3.png" alt="" class="service-img">
         <div class="service-num">03</div>
-        <h3>Desarrollo Web y Presencia Digital</h3>
-        <p>Diseñamos y desarrollamos tu web corporativa, landing pages, tiendas online o aplicaciones con un solo objetivo: que funcionen. Rápidas, seguras, optimizadas para buscadores y preparadas para convertir.</p>
+        <h3 data-en="Web Development &amp; Digital Presence" data-es="Desarrollo Web y Presencia Digital">Web Development &amp; Digital Presence</h3>
+        <p data-en="We design and develop your corporate website, landing pages, online stores or applications with one goal: to work. Fast, secure, optimized for search engines and ready to convert." data-es="Diseñamos y desarrollamos tu web corporativa, landing pages, tiendas online o aplicaciones con un solo objetivo: que funcionen. Rápidas, seguras, optimizadas para buscadores y preparadas para convertir.">We design and develop your corporate website, landing pages, online stores or applications with one goal: to work. Fast, secure, optimized for search engines and ready to convert.</p>
         <ul class="service-bullets">
-          <li>Webs corporativas, landings y e-commerce</li>
-          <li>Diseño orientado a conversión (CRO)</li>
-          <li>SEO técnico y posicionamiento orgánico</li>
-          <li>Integraciones con CRM y herramientas de automatización</li>
+          <li data-en="Corporate websites, landings and e-commerce" data-es="Webs corporativas, landings y e-commerce">Corporate websites, landings and e-commerce</li>
+          <li data-en="Conversion-oriented design (CRO)" data-es="Diseño orientado a conversión (CRO)">Conversion-oriented design (CRO)</li>
+          <li data-en="Technical SEO and organic positioning" data-es="SEO técnico y posicionamiento orgánico">Technical SEO and organic positioning</li>
+          <li data-en="CRM and automation tool integrations" data-es="Integraciones con CRM y herramientas de automatización">CRM and automation tool integrations</li>
         </ul>
       </div>
 
       <div class="service-card">
-        <img src="images/service-4.png" alt="Captación y Publicidad" class="service-img">
+        <img src="images/service-4.png" alt="" class="service-img">
         <div class="service-num">04</div>
-        <h3>Captación de Clientes y Publicidad Digital</h3>
-        <p>Diseñamos y gestionamos campañas en Meta (Facebook e Instagram) y Google Ads. Creamos los anuncios, los textos, las creatividades y las audiencias. Medimos cada euro invertido y optimizamos continuamente.</p>
+        <h3 data-en="Client Acquisition &amp; Digital Advertising" data-es="Captación de Clientes y Publicidad Digital">Client Acquisition &amp; Digital Advertising</h3>
+        <p data-en="We design and manage campaigns on Meta (Facebook and Instagram) and Google Ads. We create the ads, texts, creatives and audiences. We measure every dollar invested and continuously optimize." data-es="Diseñamos y gestionamos campañas en Meta (Facebook e Instagram) y Google Ads. Creamos los anuncios, los textos, las creatividades y las audiencias. Medimos cada euro invertido y optimizamos continuamente.">We design and manage campaigns on Meta (Facebook and Instagram) and Google Ads. We create the ads, texts, creatives and audiences. We measure every dollar invested and continuously optimize.</p>
         <ul class="service-bullets">
-          <li>Estrategia y gestión de Meta Ads</li>
-          <li>Google Ads: búsqueda, display y remarketing</li>
-          <li>Creación de anuncios y creatividades publicitarias</li>
-          <li>Análisis, reporting y optimización continua</li>
+          <li data-en="Meta Ads strategy and management" data-es="Estrategia y gestión de Meta Ads">Meta Ads strategy and management</li>
+          <li data-en="Google Ads: search, display and remarketing" data-es="Google Ads: búsqueda, display y remarketing">Google Ads: search, display and remarketing</li>
+          <li data-en="Ad creation and advertising creatives" data-es="Creación de anuncios y creatividades publicitarias">Ad creation and advertising creatives</li>
+          <li data-en="Analysis, reporting and continuous optimization" data-es="Análisis, reporting y optimización continua">Analysis, reporting and continuous optimization</li>
         </ul>
       </div>
 
       <div class="service-card">
-        <img src="images/service-5.png" alt="Automatización y CRM" class="service-img">
+        <img src="images/service-5.png" alt="" class="service-img">
         <div class="service-num">05</div>
-        <h3>Automatización de Procesos y CRM</h3>
-        <p>Eliminamos las tareas repetitivas de tu negocio. Implementamos sistemas que gestionan leads automáticamente, envían comunicaciones personalizadas y mantienen tu CRM actualizado sin intervención manual.</p>
+        <h3 data-en="Process Automation &amp; CRM" data-es="Automatización de Procesos y CRM">Process Automation &amp; CRM</h3>
+        <p data-en="We eliminate repetitive tasks from your business. We implement systems that automatically manage leads, send personalized communications and keep your CRM updated without manual intervention." data-es="Eliminamos las tareas repetitivas de tu negocio. Implementamos sistemas que gestionan leads automáticamente, envían comunicaciones personalizadas y mantienen tu CRM actualizado sin intervención manual.">We eliminate repetitive tasks from your business. We implement systems that automatically manage leads, send personalized communications and keep your CRM updated without manual intervention.</p>
         <ul class="service-bullets">
-          <li>Implementación y configuración de CRM</li>
-          <li>Automatización de flujos de trabajo y seguimiento de leads</li>
-          <li>Email marketing y secuencias automatizadas</li>
-          <li>Integraciones entre herramientas y plataformas</li>
+          <li data-en="CRM implementation and configuration" data-es="Implementación y configuración de CRM">CRM implementation and configuration</li>
+          <li data-en="Workflow automation and lead tracking" data-es="Automatización de flujos de trabajo y seguimiento de leads">Workflow automation and lead tracking</li>
+          <li data-en="Email marketing and automated sequences" data-es="Email marketing y secuencias automatizadas">Email marketing and automated sequences</li>
+          <li data-en="Integrations between tools and platforms" data-es="Integraciones entre herramientas y plataformas">Integrations between tools and platforms</li>
         </ul>
       </div>
 
       <div class="service-card">
-        <img src="images/service-6.png" alt="Marketing de Contenidos" class="service-img">
+        <img src="images/service-6.png" alt="" class="service-img">
         <div class="service-num">06</div>
-        <h3>Estrategia Digital y Marketing de Contenidos</h3>
-        <p>Diseñamos la estrategia digital integral de tu empresa: qué canales usar, qué contenido crear, cómo posicionarte y cómo medir que todo funciona. Gestionamos redes sociales y construimos comunidad alrededor de tu marca.</p>
+        <h3 data-en="Digital Strategy &amp; Content Marketing" data-es="Estrategia Digital y Marketing de Contenidos">Digital Strategy &amp; Content Marketing</h3>
+        <p data-en="We design your company's comprehensive digital strategy: which channels to use, what content to create, how to position yourself and how to measure that everything works. We manage social media and build community around your brand." data-es="Diseñamos la estrategia digital integral de tu empresa: qué canales usar, qué contenido crear, cómo posicionarte y cómo medir que todo funciona. Gestionamos redes sociales y construimos comunidad alrededor de tu marca.">We design your company's comprehensive digital strategy: which channels to use, what content to create, how to position yourself and how to measure that everything works. We manage social media and build community around your brand.</p>
         <ul class="service-bullets">
-          <li>Estrategia de marketing digital 360°</li>
-          <li>Gestión de redes sociales y contenidos</li>
-          <li>Analítica web y cuadros de mando</li>
-          <li>Marketing de contenidos y posicionamiento de marca</li>
+          <li data-en="360° digital marketing strategy" data-es="Estrategia de marketing digital 360°">360° digital marketing strategy</li>
+          <li data-en="Social media and content management" data-es="Gestión de redes sociales y contenidos">Social media and content management</li>
+          <li data-en="Web analytics and dashboards" data-es="Analítica web y cuadros de mando">Web analytics and dashboards</li>
+          <li data-en="Content marketing and brand positioning" data-es="Marketing de contenidos y posicionamiento de marca">Content marketing and brand positioning</li>
         </ul>
       </div>
 
       <div class="service-card">
-        <img src="images/service-7.png" alt="Análisis y Reporting" class="service-img">
+        <img src="images/service-7.png" alt="" class="service-img">
         <div class="service-num">07</div>
-        <h3>Análisis, Reporting e Inteligencia de Negocio</h3>
-        <p>Los datos sin análisis no sirven de nada. Construimos cuadros de mando personalizados, informes ejecutivos y sistemas de seguimiento de KPIs para que tomes decisiones basadas en información real, no en intuición.</p>
+        <h3 data-en="Analytics, Reporting &amp; Business Intelligence" data-es="Análisis, Reporting e Inteligencia de Negocio">Analytics, Reporting &amp; Business Intelligence</h3>
+        <p data-en="Data without analysis is useless. We build custom dashboards, executive reports and KPI tracking systems so you make decisions based on real information, not intuition." data-es="Los datos sin análisis no sirven de nada. Construimos cuadros de mando personalizados, informes ejecutivos y sistemas de seguimiento de KPIs para que tomes decisiones basadas en información real, no en intuición.">Data without analysis is useless. We build custom dashboards, executive reports and KPI tracking systems so you make decisions based on real information, not intuition.</p>
         <ul class="service-bullets">
-          <li>Dashboards de negocio personalizados</li>
-          <li>Reporting ejecutivo periódico</li>
-          <li>Seguimiento de KPIs y métricas clave</li>
-          <li>Análisis de rendimiento de campañas y canales</li>
+          <li data-en="Custom business dashboards" data-es="Dashboards de negocio personalizados">Custom business dashboards</li>
+          <li data-en="Periodic executive reporting" data-es="Reporting ejecutivo periódico">Periodic executive reporting</li>
+          <li data-en="KPI and key metrics tracking" data-es="Seguimiento de KPIs y métricas clave">KPI and key metrics tracking</li>
+          <li data-en="Campaign and channel performance analysis" data-es="Análisis de rendimiento de campañas y canales">Campaign and channel performance analysis</li>
         </ul>
       </div>
 
       <div class="service-card">
-        <img src="images/service-8.png" alt="Consultoría Global" class="service-img">
+        <img src="images/service-8.png" alt="" class="service-img">
         <div class="service-num">08</div>
-        <h3>Consultoría Global y Modelos de Colaboración</h3>
-        <p>Nos adaptamos a ti. Trabajamos como equipo externo, como extensión de tu equipo interno o como socio estratégico. Si tienes un proyecto que necesita dirección y ejecución, hablemos.</p>
+        <h3 data-en="Global Consulting &amp; Collaboration Models" data-es="Consultoría Global y Modelos de Colaboración">Global Consulting &amp; Collaboration Models</h3>
+        <p data-en="We adapt to you. We work as an external team, as an extension of your internal team or as a strategic partner. If you have a project that needs direction and execution, let's talk." data-es="Nos adaptamos a ti. Trabajamos como equipo externo, como extensión de tu equipo interno o como socio estratégico. Si tienes un proyecto que necesita dirección y ejecución, hablemos.">We adapt to you. We work as an external team, as an extension of your internal team or as a strategic partner. If you have a project that needs direction and execution, let's talk.</p>
         <ul class="service-bullets">
-          <li>Consultoría estratégica para empresas en expansión</li>
-          <li>Dirección de proyectos digitales complejos</li>
-          <li>Modelos flexibles: honorarios, retainer o revenue share</li>
+          <li data-en="Strategic consulting for expanding companies" data-es="Consultoría estratégica para empresas en expansión">Strategic consulting for expanding companies</li>
+          <li data-en="Complex digital project management" data-es="Dirección de proyectos digitales complejos">Complex digital project management</li>
+          <li data-en="Flexible models: fees, retainer or revenue share" data-es="Modelos flexibles: honorarios, retainer o revenue share">Flexible models: fees, retainer or revenue share</li>
         </ul>
       </div>
 
@@ -543,19 +573,19 @@
 <!-- GLOBAL REACH -->
 <section class="section section-deep">
   <div class="container text-center">
-    <span class="section-label light">Alcance Global</span>
-    <h2 class="section-title light">Operamos en Cualquier<br><span>Lugar del Mundo</span></h2>
+    <span class="section-label light" data-en="Global Reach" data-es="Alcance Global">Global Reach</span>
+    <h2 class="section-title light" data-en="We Operate Anywhere<br><span>in the World</span>" data-es="Operamos en Cualquier<br><span>Lugar del Mundo</span>">We Operate Anywhere<br><span>in the World</span></h2>
     <div class="divider"></div>
-    <p class="global-intro">Trabajamos con clientes en Europa, Latinoamérica y Norteamérica, en inglés y en español con la misma solvencia. No importa dónde estés ni en qué mercado quieras crecer. Si tu negocio puede escalar en digital, nosotros podemos ayudarte.</p>
+    <p class="global-intro" data-en="We work with clients in Europe, Latin America and North America, in English and Spanish with equal proficiency. It doesn't matter where you are or which market you want to grow in. If your business can scale digitally, we can help you." data-es="Trabajamos con clientes en Europa, Latinoamérica y Norteamérica, en inglés y en español con la misma solvencia. No importa dónde estés ni en qué mercado quieras crecer. Si tu negocio puede escalar en digital, nosotros podemos ayudarte.">We work with clients in Europe, Latin America and North America, in English and Spanish with equal proficiency. It doesn't matter where you are or which market you want to grow in. If your business can scale digitally, we can help you.</p>
     <div class="global-tags">
-      <span class="global-tag">España</span>
-      <span class="global-tag">México</span>
+      <span class="global-tag">Spain</span>
+      <span class="global-tag">Mexico</span>
       <span class="global-tag">Argentina</span>
-      <span class="global-tag">EE.UU.</span>
-      <span class="global-tag">Reino Unido</span>
-      <span class="global-tag">Francia</span>
-      <span class="global-tag">Alemania</span>
-      <span class="global-tag">Y más</span>
+      <span class="global-tag">USA</span>
+      <span class="global-tag">United Kingdom</span>
+      <span class="global-tag">France</span>
+      <span class="global-tag">Germany</span>
+      <span class="global-tag">And more</span>
     </div>
   </div>
 </section>
@@ -564,31 +594,31 @@
 <section class="section section-purple" id="process">
   <div class="container">
     <div class="text-center">
-      <span class="section-label">Cómo Trabajamos</span>
-      <h2 class="section-title">Nuestro Proceso, <span>Paso a Paso</span></h2>
+      <span class="section-label" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</span>
+      <h2 class="section-title" data-en="Our Process, <span>Step by Step</span>" data-es="Nuestro Proceso, <span>Paso a Paso</span>">Our Process, <span>Step by Step</span></h2>
       <div class="divider"></div>
-      <p class="section-sub">Sin burocracia innecesaria. Sin sorpresas. Con total claridad desde el primer día.</p>
+      <p class="section-sub" data-en="No unnecessary bureaucracy. No surprises. Total clarity from day one." data-es="Sin burocracia innecesaria. Sin sorpresas. Con total claridad desde el primer día.">No unnecessary bureaucracy. No surprises. Total clarity from day one.</p>
     </div>
     <div class="process-grid">
       <div class="process-step">
         <div class="process-num">01</div>
-        <h3>Envíanos Tu Idea</h3>
-        <p>Cuéntanos tu proyecto a través del formulario. Sin compromiso. Analizamos tu idea y estudiamos si hay encaje antes de contactarte.</p>
+        <h3 data-en="Send Us Your Idea" data-es="Envíanos Tu Idea">Send Us Your Idea</h3>
+        <p data-en="Tell us about your project through the form. No commitment. We analyze your idea and study the fit before contacting you." data-es="Cuéntanos tu proyecto a través del formulario. Sin compromiso. Analizamos tu idea y estudiamos si hay encaje antes de contactarte.">Tell us about your project through the form. No commitment. We analyze your idea and study the fit before contacting you.</p>
       </div>
       <div class="process-step">
         <div class="process-num">02</div>
-        <h3>Diagnóstico y Propuesta</h3>
-        <p>Elaboramos un diagnóstico real de tu situación y una propuesta personalizada con alcance, tiempos y precio transparente.</p>
+        <h3 data-en="Diagnosis &amp; Proposal" data-es="Diagnóstico y Propuesta">Diagnosis &amp; Proposal</h3>
+        <p data-en="We prepare a real diagnosis of your situation and a personalized proposal with scope, timelines and transparent pricing." data-es="Elaboramos un diagnóstico real de tu situación y una propuesta personalizada con alcance, tiempos y precio transparente.">We prepare a real diagnosis of your situation and a personalized proposal with scope, timelines and transparent pricing.</p>
       </div>
       <div class="process-step">
         <div class="process-num">03</div>
-        <h3>Ejecución con Seguimiento</h3>
-        <p>Nuestro equipo trabaja con actualizaciones regulares. Tú sabes en todo momento en qué punto está tu proyecto.</p>
+        <h3 data-en="Execution with Tracking" data-es="Ejecución con Seguimiento">Execution with Tracking</h3>
+        <p data-en="Our team works with regular updates. You know at all times where your project stands." data-es="Nuestro equipo trabaja con actualizaciones regulares. Tú sabes en todo momento en qué punto está tu proyecto.">Our team works with regular updates. You know at all times where your project stands.</p>
       </div>
       <div class="process-step">
         <div class="process-num">04</div>
-        <h3>Entrega y Continuidad</h3>
-        <p>Entregamos resultados medibles. Y si quieres seguir creciendo juntos, definimos el siguiente paso.</p>
+        <h3 data-en="Delivery &amp; Continuity" data-es="Entrega y Continuidad">Delivery &amp; Continuity</h3>
+        <p data-en="We deliver measurable results. And if you want to keep growing together, we define the next step." data-es="Entregamos resultados medibles. Y si quieres seguir creciendo juntos, definimos el siguiente paso.">We deliver measurable results. And if you want to keep growing together, we define the next step.</p>
       </div>
     </div>
   </div>
@@ -598,66 +628,59 @@
 <section class="section section-gray" id="reviews">
   <div class="container">
     <div class="text-center">
-      <span class="section-label">Lo Que Dicen Nuestros Clientes</span>
-      <h2 class="section-title">Resultados Reales, <span>Clientes Reales</span></h2>
+      <span class="section-label" data-en="What Our Clients Say" data-es="Lo Que Dicen Nuestros Clientes">What Our Clients Say</span>
+      <h2 class="section-title" data-en="Real Results, <span>Real Clients</span>" data-es="Resultados Reales, <span>Clientes Reales</span>">Real Results, <span>Real Clients</span></h2>
       <div class="divider"></div>
     </div>
     <div class="reviews-grid">
-
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">Llegué a Pura Group con una idea y sin saber por dónde empezar. En pocos meses tenía una marca definida, una web funcionando y mis primeros clientes captados de forma automática. Lo que más valoro es que son un equipo que piensa en tu negocio, no en venderte servicios.</p>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text" data-en="I came to Pura Group with an idea and not knowing where to start. In a few months I had a defined brand, a working website and my first clients automatically acquired. What I value most is that they are a team that thinks about your business, not about selling you services." data-es="Llegué a Pura Group con una idea y sin saber por dónde empezar. En pocos meses tenía una marca definida, una web funcionando y mis primeros clientes captados de forma automática. Lo que más valoro es que son un equipo que piensa en tu negocio, no en venderte servicios.">I came to Pura Group with an idea and not knowing where to start. In a few months I had a defined brand, a working website and my first clients automatically acquired. What I value most is that they are a team that thinks about your business, not about selling you services.</p>
         <div class="review-author">
           <span class="review-name">Carlos M.</span>
-          <span class="review-role">Fundador de startup · España</span>
+          <span class="review-role" data-en="Startup Founder · Spain" data-es="Fundador de startup · España">Startup Founder · Spain</span>
         </div>
       </div>
-
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">Teníamos un equipo comercial de 4 personas y resultados mediocres. Pura Group rediseñó todo nuestro proceso de captación, implementó el CRM y automatizó los seguimientos. Hoy captamos más leads con menos coste y sin ampliar plantilla.</p>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text" data-en="We had a sales team of 4 people and mediocre results. Pura Group redesigned our entire acquisition process, implemented the CRM and automated follow-ups. Today we capture more leads at lower cost without expanding staff." data-es="Teníamos un equipo comercial de 4 personas y resultados mediocres. Pura Group rediseñó todo nuestro proceso de captación, implementó el CRM y automatizó los seguimientos. Hoy captamos más leads con menos coste y sin ampliar plantilla.">We had a sales team of 4 people and mediocre results. Pura Group redesigned our entire acquisition process, implemented the CRM and automated follow-ups. Today we capture more leads at lower cost without expanding staff.</p>
         <div class="review-author">
           <span class="review-name">Laura G.</span>
-          <span class="review-role">Directora Comercial · Empresa B2B · México</span>
+          <span class="review-role" data-en="Commercial Director · B2B Company · Mexico" data-es="Directora Comercial · Empresa B2B · México">Commercial Director · B2B Company · Mexico</span>
         </div>
       </div>
-
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">Necesitábamos abrir mercado internacional y no sabíamos cómo estructurarlo. Pura Group nos asesoró en todo el proceso y montó la estrategia digital para el nuevo mercado. Un equipo serio y muy profesional.</p>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text" data-en="We needed to open an international market and didn't know how to structure it. Pura Group advised us throughout the process and set up the digital strategy for the new market. A serious and very professional team." data-es="Necesitábamos abrir mercado internacional y no sabíamos cómo estructurarlo. Pura Group nos asesoró en todo el proceso y montó la estrategia digital para el nuevo mercado. Un equipo serio y muy profesional.">We needed to open an international market and didn't know how to structure it. Pura Group advised us throughout the process and set up the digital strategy for the new market. A serious and very professional team.</p>
         <div class="review-author">
           <span class="review-name">Andrés P.</span>
-          <span class="review-role">CEO · Consultoría · EE.UU.</span>
+          <span class="review-role" data-en="CEO · Consulting · USA" data-es="CEO · Consultoría · EE.UU.">CEO · Consulting · USA</span>
         </div>
       </div>
-
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">Llevamos años trabajando con diferentes agencias y Pura Group es la primera que realmente entiende nuestro negocio. Las campañas funcionan, la web convierte y los reportes son claros y útiles. Exactamente lo que necesitábamos.</p>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text" data-en="We have worked with different agencies for years and Pura Group is the first that truly understands our business. The campaigns work, the website converts and the reports are clear and useful. Exactly what we needed." data-es="Llevamos años trabajando con diferentes agencias y Pura Group es la primera que realmente entiende nuestro negocio. Las campañas funcionan, la web convierte y los reportes son claros y útiles. Exactamente lo que necesitábamos.">We have worked with different agencies for years and Pura Group is the first that truly understands our business. The campaigns work, the website converts and the reports are clear and useful. Exactly what we needed.</p>
         <div class="review-author">
           <span class="review-name">Sofía R.</span>
-          <span class="review-role">Directora de Marketing · E-commerce · Argentina</span>
+          <span class="review-role" data-en="Marketing Director · E-commerce · Argentina" data-es="Directora de Marketing · E-commerce · Argentina">Marketing Director · E-commerce · Argentina</span>
         </div>
       </div>
-
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">Contratamos a Pura Group para una consultoría de transformación digital. Su nivel de análisis, la calidad de las propuestas y la capacidad de ejecución nos sorprendieron. Los recomendamos sin duda.</p>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text" data-en="We hired Pura Group for a digital transformation consultancy. Their level of analysis, quality of proposals and execution capacity surprised us. We recommend them without hesitation." data-es="Contratamos a Pura Group para una consultoría de transformación digital. Su nivel de análisis, la calidad de las propuestas y la capacidad de ejecución nos sorprendieron. Los recomendamos sin duda.">We hired Pura Group for a digital transformation consultancy. Their level of analysis, quality of proposals and execution capacity surprised us. We recommend them without hesitation.</p>
         <div class="review-author">
           <span class="review-name">Miguel A.</span>
-          <span class="review-role">Director de Transformación Digital · Grupo empresarial · España</span>
+          <span class="review-role" data-en="Digital Transformation Director · Business Group · Spain" data-es="Director de Transformación Digital · Grupo empresarial · España">Digital Transformation Director · Business Group · Spain</span>
         </div>
       </div>
-
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">El equipo de Pura Group nos ayudó a lanzar nuestra tienda online desde cero: branding, web y campañas de Meta. En los primeros tres meses superamos los objetivos de ventas que teníamos para el primer año.</p>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text" data-en="The Pura Group team helped us launch our online store from scratch: branding, website and Meta campaigns. In the first three months we exceeded the sales goals we had set for the entire first year." data-es="El equipo de Pura Group nos ayudó a lanzar nuestra tienda online desde cero: branding, web y campañas de Meta. En los primeros tres meses superamos los objetivos de ventas que teníamos para el primer año.">The Pura Group team helped us launch our online store from scratch: branding, website and Meta campaigns. In the first three months we exceeded the sales goals we had set for the entire first year.</p>
         <div class="review-author">
           <span class="review-name">Patricia V.</span>
-          <span class="review-role">Fundadora · Marca de producto · Francia</span>
+          <span class="review-role" data-en="Founder · Product Brand · France" data-es="Fundadora · Marca de producto · Francia">Founder · Product Brand · France</span>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -666,102 +689,95 @@
 <section class="section" id="contact">
   <div class="container">
     <div class="form-wrapper">
-      <h2 class="form-title">Cuéntanos Tu Proyecto</h2>
-      <p class="form-sub">Sin compromisos. Sin presiones. Solo una conversación para ver si podemos ayudarte y cómo.<br>Te respondemos en menos de 24 horas.</p>
+      <h2 class="form-title" data-en="Tell Us About Your Project" data-es="Cuéntanos Tu Proyecto">Tell Us About Your Project</h2>
+      <p class="form-sub" data-en="No commitment. No pressure. Just a conversation to see if we can help you and how. We will get back to you as soon as possible." data-es="Sin compromisos. Sin presiones. Solo una conversación para ver si podemos ayudarte y cómo. Te respondemos lo antes posible.">No commitment. No pressure. Just a conversation to see if we can help you and how. We will get back to you as soon as possible.</p>
       <form id="contact-form" action="https://formsubmit.co/puragroupllc@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="🌐 NUEVA CONSULTA — Pura Group">
+        <input type="hidden" name="_subject" value="&#127760; NEW INQUIRY — Pura Group">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://pura-group.com/gracias.html">
+        <input type="hidden" name="_next" id="form-next-url" value="https://pura-group.com/thank-you.html">
         <div class="form-row">
           <div class="form-group">
-            <label>Nombre Completo *</label>
-            <input type="text" name="Nombre" required placeholder="Tu nombre">
+            <label data-en="Full Name *" data-es="Nombre Completo *">Full Name *</label>
+            <input type="text" name="Name" required placeholder="Your name">
           </div>
           <div class="form-group">
-            <label>Email *</label>
-            <input type="email" name="Email" required placeholder="tu@email.com">
+            <label data-en="Email *" data-es="Email *">Email *</label>
+            <input type="email" name="Email" required placeholder="your@email.com">
           </div>
         </div>
         <div class="form-group">
-          <label>Teléfono / WhatsApp</label>
+          <label data-en="Phone / WhatsApp" data-es="Teléfono / WhatsApp">Phone / WhatsApp</label>
           <div class="phone-row">
-            <select name="Prefijo">
-              <option value="+34">🇪🇸 +34</option>
-              <option value="+1">🇺🇸 +1</option>
-              <option value="+44">🇬🇧 +44</option>
-              <option value="+33">🇫🇷 +33</option>
-              <option value="+49">🇩🇪 +49</option>
-              <option value="+39">🇮🇹 +39</option>
-              <option value="+31">🇳🇱 +31</option>
-              <option value="+32">🇧🇪 +32</option>
-              <option value="+41">🇨🇭 +41</option>
-              <option value="+43">🇦🇹 +43</option>
-              <option value="+351">🇵🇹 +351</option>
-              <option value="+48">🇵🇱 +48</option>
-              <option value="+46">🇸🇪 +46</option>
-              <option value="+47">🇳🇴 +47</option>
-              <option value="+45">🇩🇰 +45</option>
-              <option value="+358">🇫🇮 +358</option>
-              <option value="+353">🇮🇪 +353</option>
-              <option value="+30">🇬🇷 +30</option>
-              <option value="+380">🇺🇦 +380</option>
-              <option value="+7">🇷🇺 +7</option>
-              <option value="+90">🇹🇷 +90</option>
-              <option value="+52">🇲🇽 +52</option>
-              <option value="+54">🇦🇷 +54</option>
-              <option value="+55">🇧🇷 +55</option>
-              <option value="+56">🇨🇱 +56</option>
-              <option value="+57">🇨🇴 +57</option>
-              <option value="+51">🇵🇪 +51</option>
-              <option value="+58">🇻🇪 +58</option>
-              <option value="+593">🇪🇨 +593</option>
-              <option value="+595">🇵🇾 +595</option>
-              <option value="+598">🇺🇾 +598</option>
-              <option value="+591">🇧🇴 +591</option>
-              <option value="+502">🇬🇹 +502</option>
-              <option value="+503">🇸🇻 +503</option>
-              <option value="+504">🇭🇳 +504</option>
-              <option value="+505">🇳🇮 +505</option>
-              <option value="+506">🇨🇷 +506</option>
-              <option value="+507">🇵🇦 +507</option>
-              <option value="+1-809">🇩🇴 +1-809</option>
-              <option value="+53">🇨🇺 +53</option>
-              <option value="+1-876">🇯🇲 +1-876</option>
-              <option value="+1-868">🇹🇹 +1-868</option>
-              <option value="+86">🇨🇳 +86</option>
-              <option value="+81">🇯🇵 +81</option>
-              <option value="+82">🇰🇷 +82</option>
-              <option value="+91">🇮🇳 +91</option>
-              <option value="+92">🇵🇰 +92</option>
-              <option value="+880">🇧🇩 +880</option>
-              <option value="+62">🇮🇩 +62</option>
-              <option value="+63">🇵🇭 +63</option>
-              <option value="+84">🇻🇳 +84</option>
-              <option value="+66">🇹🇭 +66</option>
-              <option value="+60">🇲🇾 +60</option>
-              <option value="+65">🇸🇬 +65</option>
-              <option value="+971">🇦🇪 +971</option>
-              <option value="+966">🇸🇦 +966</option>
-              <option value="+972">🇮🇱 +972</option>
-              <option value="+20">🇪🇬 +20</option>
-              <option value="+27">🇿🇦 +27</option>
-              <option value="+234">🇳🇬 +234</option>
-              <option value="+254">🇰🇪 +254</option>
-              <option value="+212">🇲🇦 +212</option>
-              <option value="+213">🇩🇿 +213</option>
-              <option value="+61">🇦🇺 +61</option>
-              <option value="+64">🇳🇿 +64</option>
+            <select name="Prefix">
+              <option value="+1">&#127482;&#127480; +1</option>
+              <option value="+34">&#127466;&#127480; +34</option>
+              <option value="+44">&#127468;&#127463; +44</option>
+              <option value="+33">&#127467;&#127479; +33</option>
+              <option value="+49">&#127465;&#127466; +49</option>
+              <option value="+39">&#127470;&#127481; +39</option>
+              <option value="+31">&#127475;&#127473; +31</option>
+              <option value="+32">&#127463;&#127466; +32</option>
+              <option value="+41">&#127464;&#127469; +41</option>
+              <option value="+43">&#127462;&#127481; +43</option>
+              <option value="+351">&#127477;&#127481; +351</option>
+              <option value="+48">&#127477;&#127473; +48</option>
+              <option value="+46">&#127480;&#127466; +46</option>
+              <option value="+47">&#127475;&#127476; +47</option>
+              <option value="+45">&#127465;&#127472; +45</option>
+              <option value="+358">&#127467;&#127470; +358</option>
+              <option value="+353">&#127470;&#127466; +353</option>
+              <option value="+30">&#127468;&#127479; +30</option>
+              <option value="+380">&#127482;&#127462; +380</option>
+              <option value="+7">&#127479;&#127482; +7</option>
+              <option value="+90">&#127481;&#127479; +90</option>
+              <option value="+52">&#127474;&#127485; +52</option>
+              <option value="+54">&#127462;&#127479; +54</option>
+              <option value="+55">&#127463;&#127479; +55</option>
+              <option value="+56">&#127464;&#127473; +56</option>
+              <option value="+57">&#127464;&#127476; +57</option>
+              <option value="+51">&#127477;&#127466; +51</option>
+              <option value="+58">&#127483;&#127466; +58</option>
+              <option value="+593">&#127466;&#127464; +593</option>
+              <option value="+595">&#127477;&#127486; +595</option>
+              <option value="+598">&#127482;&#127486; +598</option>
+              <option value="+591">&#127463;&#127476; +591</option>
+              <option value="+502">&#127468;&#127481; +502</option>
+              <option value="+503">&#127480;&#127483; +503</option>
+              <option value="+504">&#127469;&#127475; +504</option>
+              <option value="+505">&#127475;&#127470; +505</option>
+              <option value="+506">&#127464;&#127479; +506</option>
+              <option value="+507">&#127477;&#127462; +507</option>
+              <option value="+53">&#127464;&#127482; +53</option>
+              <option value="+86">&#127464;&#127475; +86</option>
+              <option value="+81">&#127471;&#127477; +81</option>
+              <option value="+82">&#127472;&#127479; +82</option>
+              <option value="+91">&#127470;&#127475; +91</option>
+              <option value="+62">&#127470;&#127465; +62</option>
+              <option value="+63">&#127477;&#127469; +63</option>
+              <option value="+66">&#127481;&#127469; +66</option>
+              <option value="+60">&#127474;&#127486; +60</option>
+              <option value="+65">&#127480;&#127468; +65</option>
+              <option value="+971">&#127462;&#127466; +971</option>
+              <option value="+966">&#127480;&#127462; +966</option>
+              <option value="+972">&#127470;&#127473; +972</option>
+              <option value="+20">&#127466;&#127468; +20</option>
+              <option value="+27">&#127487;&#127462; +27</option>
+              <option value="+234">&#127475;&#127468; +234</option>
+              <option value="+254">&#127472;&#127466; +254</option>
+              <option value="+212">&#127474;&#127462; +212</option>
+              <option value="+61">&#127462;&#127482; +61</option>
+              <option value="+64">&#127475;&#127487; +64</option>
             </select>
-            <input type="tel" name="Teléfono" placeholder="600 000 000">
+            <input type="tel" name="Phone" placeholder="600 000 000">
           </div>
         </div>
         <div class="form-group">
-          <label>Cuéntanos tu proyecto o en qué podemos ayudarte *</label>
-          <textarea name="Mensaje" required rows="5" placeholder="Describe brevemente tu proyecto, idea o necesidad..."></textarea>
+          <label data-en="Tell us about your project or how we can help *" data-es="Cuéntanos tu proyecto o en qué podemos ayudarte *">Tell us about your project or how we can help *</label>
+          <textarea name="Message" required rows="5" placeholder="Briefly describe your project, idea or need..."></textarea>
         </div>
-        <p class="form-privacy">Al enviar este formulario aceptas nuestra <a href="privacy-policy.html">Política de Privacidad</a>.</p>
-        <button type="submit" class="btn-submit">Enviar Mensaje →</button>
+        <p class="form-privacy" data-en="By submitting this form you agree to our <a href='privacy-policy.html'>Privacy Policy</a>." data-es="Al enviar este formulario aceptas nuestra <a href='privacy-policy.html'>Política de Privacidad</a>.">By submitting this form you agree to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+        <button type="submit" class="btn-submit" data-en="Send Message &rarr;" data-es="Enviar Mensaje &rarr;">Send Message &rarr;</button>
       </form>
     </div>
   </div>
@@ -773,38 +789,90 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <img src="images/3-logo-pura-group-llc.png" alt="Pura Group LLC">
-        <p>Pura Group LLC — Construimos negocios digitales de principio a fin. Operación global, equipo bilingüe, enfoque en resultados.</p>
+        <p data-en="Pura Group LLC — We build digital businesses from start to finish. Global operation, bilingual team, results-focused." data-es="Pura Group LLC — Construimos negocios digitales de principio a fin. Operación global, equipo bilingüe, enfoque en resultados.">Pura Group LLC — We build digital businesses from start to finish. Global operation, bilingual team, results-focused.</p>
         <a href="mailto:hello@pura-group.com" class="footer-email">hello@pura-group.com</a>
       </div>
       <div class="footer-col">
-        <h4>Servicios</h4>
-        <a href="#services">Estrategia y Validación</a>
-        <a href="#services">Marca y Copywriting</a>
-        <a href="#services">Desarrollo Web</a>
-        <a href="#services">Captación y Publicidad</a>
-        <a href="#services">Automatización y CRM</a>
-        <a href="#services">Marketing Digital</a>
-        <a href="#services">Análisis y Reporting</a>
-        <a href="#services">Consultoría Global</a>
+        <h4 data-en="Services" data-es="Servicios">Services</h4>
+        <a href="#services" data-en="Strategy &amp; Validation" data-es="Estrategia y Validación">Strategy &amp; Validation</a>
+        <a href="#services" data-en="Brand &amp; Copywriting" data-es="Marca y Copywriting">Brand &amp; Copywriting</a>
+        <a href="#services" data-en="Web Development" data-es="Desarrollo Web">Web Development</a>
+        <a href="#services" data-en="Advertising" data-es="Captación y Publicidad">Advertising</a>
+        <a href="#services" data-en="Automation &amp; CRM" data-es="Automatización y CRM">Automation &amp; CRM</a>
+        <a href="#services" data-en="Digital Marketing" data-es="Marketing Digital">Digital Marketing</a>
+        <a href="#services" data-en="Analytics &amp; Reporting" data-es="Análisis y Reporting">Analytics &amp; Reporting</a>
+        <a href="#services" data-en="Global Consulting" data-es="Consultoría Global">Global Consulting</a>
       </div>
       <div class="footer-col">
-        <h4>Legal</h4>
-        <a href="legal-notice.html">Aviso Legal</a>
-        <a href="privacy-policy.html">Política de Privacidad</a>
-        <a href="cookie-policy.html">Política de Cookies</a>
+        <h4 data-en="Legal" data-es="Legal">Legal</h4>
+        <a href="legal-notice.html" data-en="Legal Notice" data-es="Aviso Legal">Legal Notice</a>
+        <a href="privacy-policy.html" data-en="Privacy Policy" data-es="Política de Privacidad">Privacy Policy</a>
+        <a href="cookie-policy.html" data-en="Cookie Policy" data-es="Política de Cookies">Cookie Policy</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="year"></span> Pura Group LLC. Todos los derechos reservados.</span>
-      <span>Digital Business &amp; Global Services</span>
+      <span>&copy; <span id="year"></span> Pura Group LLC. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></span>
+      <span data-en="Digital Business &amp; Global Services" data-es="Digital Business &amp; Global Services">Digital Business &amp; Global Services</span>
     </div>
   </div>
 </footer>
 
-<a href="#" id="btn-top" aria-label="Volver arriba">▲</a>
+<a href="#" id="btn-top" aria-label="Back to top">&#9650;</a>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  let currentLang = localStorage.getItem('pg-lang') || 'en';
+
+  function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('pg-lang', lang);
+    document.documentElement.lang = lang;
+    // Desktop buttons
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+    // Mobile buttons
+    document.getElementById('btn-en-m').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-es-m').classList.toggle('active', lang === 'es');
+    // Form redirect
+    const nextUrl = document.getElementById('form-next-url');
+    if (nextUrl) {
+      nextUrl.value = lang === 'es'
+        ? 'https://pura-group.com/gracias.html'
+        : 'https://pura-group.com/thank-you.html';
+    }
+    // Translate all data-en/data-es elements
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const text = el.getAttribute('data-' + lang);
+      if (!text) return;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = text;
+      } else {
+        el.innerHTML = text;
+      }
+    });
+    // Cookie banner text
+    const cookieText = document.getElementById('cookie-text');
+    if (cookieText) {
+      cookieText.innerHTML = lang === 'es'
+        ? 'Usamos cookies propias y de terceros para mejorar tu experiencia. Visita nuestra <a href="cookie-policy.html">política de cookies</a>.'
+        : 'We use cookies to improve your experience. Visit our <a href="cookie-policy.html">cookie policy</a> page.';
+      document.getElementById('cookie-btn-reject').textContent = lang === 'es' ? 'Rechazar' : 'Decline';
+      document.getElementById('cookie-btn-accept').textContent = lang === 'es' ? 'Aceptar' : 'Accept';
+    }
+    // Global tags
+    const tagsEs = ['España','México','Argentina','EE.UU.','Reino Unido','Francia','Alemania','Y más'];
+    const tagsEn = ['Spain','Mexico','Argentina','USA','United Kingdom','France','Germany','And more'];
+    const tags = document.querySelectorAll('.global-tag');
+    const tagList = lang === 'es' ? tagsEs : tagsEn;
+    tags.forEach((t, i) => { if (tagList[i]) t.textContent = tagList[i]; });
+    // Page title
+    document.title = lang === 'es'
+      ? 'Pura Group LLC | Servicios Digitales y Soluciones Empresariales'
+      : 'Pura Group LLC | Digital Services & Business Solutions';
+  }
+
+  setLang(currentLang);
 
   // Cookies
   if (localStorage.getItem('pg-cookies')) document.getElementById('cookie-banner').style.display = 'none';
@@ -822,7 +890,7 @@
   document.addEventListener('click', (e) => {
     const menu = document.querySelector('.mobile-menu');
     const toggle = document.querySelector('.menu-toggle');
-    if (menu.classList.contains('open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+    if (menu && menu.classList.contains('open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
       menu.classList.remove('open');
     }
   });
