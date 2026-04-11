@@ -8,42 +8,272 @@
   <link rel="icon" type="image/png" href="images/1-favicon-pura-group.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
   <style>
-    :root { --purple: #927eb6; --purple-dark: #6a5a8e; --purple-light: #c4b8dc; --black: #000; --white: #fff; --gray: #efecec; }
+    :root {
+      --purple: #7c6aaa;
+      --purple-dark: #5c4d8a;
+      --purple-light: #c4b8dc;
+      --purple-bg: #f4f1fa;
+      --black: #0d0d0d;
+      --white: #ffffff;
+      --gray: #f2f0f5;
+      --text: #1a1a2e;
+      --text-light: #5a5870;
+      --radius: 14px;
+      --shadow: 0 4px 28px rgba(124,106,170,0.10);
+      --shadow-lg: 0 16px 56px rgba(124,106,170,0.18);
+    }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: #1a1a1a; min-height: 100vh; display: flex; flex-direction: column; }
-    .navbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 6%; background: var(--white); box-shadow: 0 1px 0 rgba(146,126,182,0.15); }
-    .navbar img { height: 44px; width: auto; }
-    .main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 60px 24px; }
-    .card { text-align: center; max-width: 520px; padding: 60px 40px; background: white; border-radius: 20px; box-shadow: 0 12px 48px rgba(146,126,182,0.15); border: 1px solid rgba(146,126,182,0.1); }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); line-height: 1.75; -webkit-font-smoothing: antialiased; font-size: 16px; display: flex; flex-direction: column; min-height: 100vh; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+
+    /* COOKIE */
+    #cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+      background: #111; color: white; padding: 16px 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px; font-size: 0.88rem;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.4);
+      border-top: 1px solid rgba(124,106,170,0.3);
+    }
+    #cookie-banner a { color: var(--purple-light); text-decoration: underline; }
+    #cookie-text { flex: 1; min-width: 200px; }
+    .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
+    .btn-cookie { padding: 9px 22px; border-radius: 50px; font-weight: 600; font-size: 0.88rem; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
+    .btn-accept { background: var(--purple); color: white; }
+    .btn-reject { background: transparent; color: #999; border: 1px solid rgba(255,255,255,0.2); }
+
+    /* LANG SWITCHER */
+    .lang-switcher { display: flex; align-items: center; gap: 8px; margin-right: 16px; }
+    .lang-btn { background: none; border: none; cursor: pointer; opacity: 0.4; transition: opacity 0.2s; padding: 0; }
+    .lang-btn.active { opacity: 1; }
+    .lang-btn img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; display: block; }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%; height: auto; min-height: 72px;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(124,106,170,0.12); position: sticky; top: 0; z-index: 100;
+    }
+    .navbar-logo img { height: 100px; width: auto; }
+    .navbar-center { display: flex; align-items: center; gap: 32px; margin-left: auto; margin-right: 32px; }
+    .navbar-center a { font-size: 0.9rem; font-weight: 500; color: var(--text-light); transition: color 0.2s; letter-spacing: 0.01em; }
+    .navbar-center a:hover { color: var(--purple); }
+    .navbar-right { display: flex; align-items: center; gap: 16px; }
+    .btn-nav {
+      background: var(--purple); color: white; padding: 11px 26px;
+      border-radius: 50px; font-weight: 600; font-size: 0.9rem;
+      font-family: 'DM Sans', sans-serif; transition: all 0.2s;
+      border: none; cursor: pointer; display: inline-block; white-space: nowrap;
+    }
+    .btn-nav:hover { background: var(--purple-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(124,106,170,0.35); }
+    .menu-toggle { display: none; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: var(--black); padding: 6px; }
+
+    /* MOBILE MENU */
+    .mobile-menu {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      background: white; box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+      padding: 20px 6%; z-index: 99; border-top: 1px solid var(--gray);
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 12px 0; border-bottom: 1px solid var(--gray); font-weight: 500; font-size: 1rem; color: var(--text); }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu .btn-primary { margin-top: 16px; text-align: center; display: block; border-bottom: none; color: white; }
+
+    /* FOOTER */
+    footer { background: #080610; color: rgba(255,255,255,0.6); padding: 60px 6% 30px; }
+    .footer-inner { display: grid; grid-template-columns: 2.2fr 1fr 1fr; gap: 56px; margin-bottom: 48px; }
+    .footer-brand img { height: 80px; margin-bottom: 18px; filter: brightness(0) invert(1) opacity(0.8); }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.8; color: rgba(255,255,255,0.5); }
+    .footer-brand .footer-email { display: inline-block; margin-top: 14px; font-size: 0.88rem; color: var(--purple-light); }
+    .footer-col h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: white; margin-bottom: 18px; letter-spacing: 0.5px; }
+    .footer-col a { display: block; font-size: 0.88rem; margin-bottom: 11px; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .footer-col a:hover { color: var(--purple-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; flex-wrap: wrap; gap: 12px; color: rgba(255,255,255,0.35); }
+
+    /* SCROLL TOP */
+    #btn-top { position: fixed; bottom: 28px; right: 28px; z-index: 9998; background: var(--purple); color: white; width: 46px; height: 46px; border-radius: 50%; display: none; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.3); font-size: 1rem; transition: all 0.2s; }
+    #btn-top:hover { background: var(--purple-dark); transform: translateY(-2px); }
+    #btn-top.visible { display: flex; }
+
+    /* MAIN CONTENT */
+    .main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 80px 24px; }
+    .card { text-align: center; max-width: 520px; padding: 60px 40px; background: white; border-radius: 20px; box-shadow: 0 12px 48px rgba(124,106,170,0.15); border: 1px solid rgba(124,106,170,0.1); }
     .icon { font-size: 4rem; margin-bottom: 24px; }
-    h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; color: var(--black); margin-bottom: 16px; }
-    p { color: #555; font-size: 1.05rem; line-height: 1.7; margin-bottom: 12px; }
-    .btn { display: inline-block; margin-top: 28px; background: var(--purple); color: white; padding: 14px 36px; border-radius: 50px; font-weight: 600; font-size: 1rem; font-family: 'DM Sans', sans-serif; text-decoration: none; transition: background 0.2s; }
+    .card h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; color: var(--black); margin-bottom: 16px; }
+    .card p { color: var(--text-light); font-size: 1.05rem; line-height: 1.7; margin-bottom: 12px; }
+    .btn { display: inline-block; margin-top: 28px; background: var(--purple); color: white; padding: 14px 36px; border-radius: 50px; font-weight: 600; font-size: 1rem; font-family: 'DM Sans', sans-serif; transition: background 0.2s; }
     .btn:hover { background: var(--purple-dark); }
-    footer { background: var(--black); color: rgba(255,255,255,0.6); text-align: center; padding: 20px 6%; font-size: 0.85rem; }
-    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
-    footer a:hover { color: var(--purple-light); }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .btn-nav { display: none; }
+      .menu-toggle { display: block; }
+      .navbar { position: relative; }
+      .navbar-logo img { height: 90px; }
+      .navbar-center { display: none; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .mobile-menu a { font-size: 1.125rem; }
+      .lang-switcher { margin-right: 8px; }
+    }
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <a href="index.html"><img src="images/3-logo-pura-group-llc.png" alt="Pura Group LLC"></a>
-  </nav>
-  <main class="main">
-    <div class="card">
-      <div class="icon">✅</div>
-      <h1>Message Received!</h1>
-      <p>Thank you for reaching out to <strong>Pura Group LLC</strong>.</p>
-      <p>We have received your inquiry and will get back to you as soon as possible — usually within 24 hours.</p>
-      <a href="index.html" class="btn">← Back to Home</a>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <span id="cookie-text">We use our own and third-party cookies to improve your browsing experience and analyze site usage. For more information, please visit our <a href="cookie-policy.html">cookie policy</a> page.</span>
+  <div class="cookie-btns">
+    <button class="btn-cookie btn-reject" onclick="closeCookies()" id="cookie-btn-reject">Decline</button>
+    <button class="btn-cookie btn-accept" onclick="acceptCookies()" id="cookie-btn-accept">Accept</button>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" style="position:relative">
+  <a href="index.html" class="navbar-logo">
+    <img src="images/3-logo-pura-group-llc.png" alt="Pura Group LLC" width="150" height="100">
+  </a>
+  <div class="navbar-center">
+    <a href="index.html#about" data-en="About Us" data-es="Quiénes Somos">About Us</a>
+    <a href="index.html#services" data-en="Services" data-es="Servicios">Services</a>
+    <a href="index.html#process" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
+    <a href="index.html#reviews" data-en="Results" data-es="Resultados">Results</a>
+  </div>
+  <div class="navbar-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')" title="English"><img src="images/english.png" alt="EN"></button>
+      <button class="lang-btn" id="btn-es" onclick="setLang('es')" title="Español"><img src="images/espanol.png" alt="ES"></button>
     </div>
-  </main>
-  <footer>
-    <p>© <script>document.write(new Date().getFullYear())</script> Pura Group LLC. All rights reserved.</p>
-    <p style="margin-top:8px"><a href="legal-notice.html">Legal Notice</a> <a href="privacy-policy.html">Privacy Policy</a> <a href="cookie-policy.html">Cookie Policy</a></p>
-  </footer>
+    <a href="index.html#contact" class="btn-nav" data-en="Get a Quote" data-es="Solicitar Consulta">Get a Quote</a>
+    <button class="menu-toggle" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">&#9776;</button>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html#about" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="About Us" data-es="Quiénes Somos">About Us</a>
+    <a href="index.html#services" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Services" data-es="Servicios">Services</a>
+    <a href="index.html#process" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
+    <a href="index.html#reviews" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Results" data-es="Resultados">Results</a>
+    <a href="index.html#contact" class="btn-primary" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Get a Quote" data-es="Solicitar Consulta">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+  <div class="card">
+    <div class="icon">✅</div>
+    <h1>Message Received!</h1>
+    <p>Thank you for reaching out to <strong>Pura Group LLC</strong>.</p>
+    <p>We have received your inquiry and will get back to you as soon as possible.</p>
+    <a href="index.html" class="btn">← Back to Home</a>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container" style="max-width:1120px;margin:0 auto;">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/3-logo-pura-group-llc.png" alt="Pura Group LLC">
+        <p data-en="Pura Group LLC — We build digital businesses from start to finish. Global operation, bilingual team, results-focused." data-es="Pura Group LLC — Construimos negocios digitales de principio a fin. Operación global, equipo bilingüe, enfoque en resultados.">Pura Group LLC — We build digital businesses from start to finish. Global operation, bilingual team, results-focused.</p>
+        <a href="mailto:hello@pura-group.com" class="footer-email">hello@pura-group.com</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Services" data-es="Servicios">Services</h4>
+        <a href="index.html#services" data-en="Strategy &amp; Validation" data-es="Estrategia y Validación">Strategy &amp; Validation</a>
+        <a href="index.html#services" data-en="Brand &amp; Copywriting" data-es="Marca y Copywriting">Brand &amp; Copywriting</a>
+        <a href="index.html#services" data-en="Web Development" data-es="Desarrollo Web">Web Development</a>
+        <a href="index.html#services" data-en="Advertising" data-es="Captación y Publicidad">Advertising</a>
+        <a href="index.html#services" data-en="Automation &amp; CRM" data-es="Automatización y CRM">Automation &amp; CRM</a>
+        <a href="index.html#services" data-en="Digital Marketing" data-es="Marketing Digital">Digital Marketing</a>
+        <a href="index.html#services" data-en="Analytics &amp; Reporting" data-es="Análisis y Reporting">Analytics &amp; Reporting</a>
+        <a href="index.html#services" data-en="Global Consulting" data-es="Consultoría Global">Global Consulting</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Legal" data-es="Legal">Legal</h4>
+        <a href="legal-notice.html" data-en="Legal Notice" data-es="Aviso Legal">Legal Notice</a>
+        <a href="privacy-policy.html" data-en="Privacy Policy" data-es="Política de Privacidad">Privacy Policy</a>
+        <a href="cookie-policy.html" data-en="Cookie Policy" data-es="Política de Cookies">Cookie Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Pura Group LLC. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></span>
+      <span data-en="Digital Business &amp; Global Services" data-es="Digital Business &amp; Global Services">Digital Business &amp; Global Services</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="btn-top" aria-label="Back to top">&#9650;</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  let currentLang = localStorage.getItem('pg-lang') || 'en';
+
+  function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('pg-lang', lang);
+    document.documentElement.lang = lang;
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const text = el.getAttribute('data-' + lang);
+      if (!text) return;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = text;
+      } else {
+        el.innerHTML = text;
+      }
+    });
+    const cookieText = document.getElementById('cookie-text');
+    if (cookieText) {
+      cookieText.innerHTML = lang === 'es'
+        ? 'Usamos cookies propias y de terceros para mejorar tu experiencia. Visita nuestra <a href="cookie-policy.html">política de cookies</a>.'
+        : 'We use cookies to improve your experience. Visit our <a href="cookie-policy.html">cookie policy</a> page.';
+      document.getElementById('cookie-btn-reject').textContent = lang === 'es' ? 'Rechazar' : 'Decline';
+      document.getElementById('cookie-btn-accept').textContent = lang === 'es' ? 'Aceptar' : 'Accept';
+    }
+    document.title = lang === 'es'
+      ? 'Gracias | Pura Group LLC'
+      : 'Thank You | Pura Group LLC';
+  }
+
+  setLang(currentLang);
+
+  if (localStorage.getItem('pg-cookies')) document.getElementById('cookie-banner').style.display = 'none';
+  function acceptCookies() { localStorage.setItem('pg-cookies', 'accepted'); document.getElementById('cookie-banner').style.display = 'none'; }
+  function closeCookies() { localStorage.setItem('pg-cookies', 'rejected'); document.getElementById('cookie-banner').style.display = 'none'; }
+
+  const btnTop = document.getElementById('btn-top');
+  window.addEventListener('scroll', () => {
+    btnTop.classList.toggle('visible', window.scrollY > 500);
+  });
+  btnTop.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  document.addEventListener('click', (e) => {
+    const menu = document.querySelector('.mobile-menu');
+    const toggle = document.querySelector('.menu-toggle');
+    if (menu && menu.classList.contains('open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    navbar.style.boxShadow = window.scrollY > 20
+      ? '0 2px 20px rgba(0,0,0,0.08)'
+      : '0 1px 0 rgba(124,106,170,0.12)';
+  });
+</script>
+
 </body>
 </html>
