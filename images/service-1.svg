@@ -1,0 +1,55 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#0d0d0d"/>
+  <!-- Decorative circles -->
+  <circle cx="320" cy="80" r="60" fill="#1a1a2e" opacity="0.8"/>
+  <circle cx="60" cy="340" r="40" fill="#1a1a2e" opacity="0.6"/>
+  <!-- Chart bars -->
+  <rect x="80" y="260" width="36" height="80" rx="4" fill="#5b4f8a"/>
+  <rect x="128" y="210" width="36" height="130" rx="4" fill="#7c6aaa"/>
+  <rect x="176" y="170" width="36" height="170" rx="4" fill="#9b85c4"/>
+  <rect x="224" y="130" width="36" height="210" rx="4" fill="#7c6aaa"/>
+  <rect x="272" y="90" width="36" height="250" rx="4" fill="#f5c518"/>
+  <!-- Arrow up -->
+  <polyline points="80,270 128,220 176,180 224,140 272,100" fill="none" stroke="#f5c518" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="272,100 290,115 278,88" fill="#f5c518"/>
+  <!-- Person left -->
+  <circle cx="100" cy="170" r="22" fill="#5b7bc4"/>
+  <rect x="82" y="195" width="36" height="50" rx="8" fill="#3a5499"/>
+  <rect x="74" y="200" width="16" height="34" rx="6" fill="#3a5499"/>
+  <rect x="104" y="200" width="16" height="34" rx="6" fill="#3a5499"/>
+  <!-- Tablet in hand -->
+  <rect x="90" y="218" width="24" height="18" rx="3" fill="#c4b8dc"/>
+  <rect x="92" y="220" width="20" height="14" rx="2" fill="#7c6aaa"/>
+  <!-- Magnifying glass right person -->
+  <circle cx="300" cy="175" r="22" fill="#f5c518"/>
+  <rect x="282" y="200" width="36" height="50" rx="8" fill="#c4960a"/>
+  <rect x="274" y="205" width="14" height="30" rx="6" fill="#c4960a"/>
+  <rect x="306" y="205" width="14" height="30" rx="6" fill="#c4960a"/>
+  <!-- Magnifying glass -->
+  <circle cx="308" cy="155" r="18" fill="none" stroke="#ffffff" stroke-width="3"/>
+  <line x1="322" y1="168" x2="335" y2="182" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <!-- Gear top left -->
+  <circle cx="55" cy="100" r="22" fill="none" stroke="#7c6aaa" stroke-width="3"/>
+  <circle cx="55" cy="100" r="10" fill="#7c6aaa"/>
+  <rect x="51" y="74" width="8" height="12" rx="3" fill="#7c6aaa"/>
+  <rect x="51" y="114" width="8" height="12" rx="3" fill="#7c6aaa"/>
+  <rect x="29" y="96" width="12" height="8" rx="3" fill="#7c6aaa"/>
+  <rect x="69" y="96" width="12" height="8" rx="3" fill="#7c6aaa"/>
+  <!-- Checkmark circle top right -->
+  <circle cx="340" cy="100" r="28" fill="none" stroke="#5b7bc4" stroke-width="3"/>
+  <polyline points="328,100 336,110 354,88" fill="none" stroke="#f5c518" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Coins bottom -->
+  <ellipse cx="240" cy="355" rx="20" ry="8" fill="#f5c518"/>
+  <rect x="220" y="340" width="40" height="15" rx="4" fill="#e6b800"/>
+  <ellipse cx="240" cy="340" rx="20" ry="8" fill="#f5c518"/>
+  <rect x="220" y="326" width="40" height="14" rx="4" fill="#e6b800"/>
+  <ellipse cx="240" cy="326" rx="20" ry="8" fill="#f5c518"/>
+  <!-- Plant left -->
+  <rect x="42" y="340" width="8" height="30" rx="3" fill="#3a5a3a"/>
+  <ellipse cx="46" cy="325" rx="12" ry="18" fill="#4a7a4a" opacity="0.8"/>
+  <ellipse cx="34" cy="335" rx="10" ry="14" fill="#3a6a3a" opacity="0.7"/>
+  <!-- Plant right -->
+  <rect x="352" y="340" width="8" height="30" rx="3" fill="#3a5a3a"/>
+  <ellipse cx="356" cy="325" rx="12" ry="18" fill="#4a7a4a" opacity="0.8"/>
+  <ellipse cx="368" cy="335" rx="10" ry="14" fill="#3a6a3a" opacity="0.7"/>
+</svg>

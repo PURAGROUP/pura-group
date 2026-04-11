@@ -1,0 +1,50 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#0d0d0d"/>
+  <circle cx="60" cy="70" r="50" fill="#1a1a2e" opacity="0.7"/>
+  <circle cx="350" cy="330" r="45" fill="#1a1a2e" opacity="0.6"/>
+  <!-- Target/bullseye right -->
+  <circle cx="300" cy="130" r="65" fill="none" stroke="#3a3a5a" stroke-width="2"/>
+  <circle cx="300" cy="130" r="48" fill="none" stroke="#5b4f8a" stroke-width="2"/>
+  <circle cx="300" cy="130" r="32" fill="none" stroke="#7c6aaa" stroke-width="2"/>
+  <circle cx="300" cy="130" r="16" fill="#f5c518"/>
+  <circle cx="300" cy="130" r="6" fill="#c4960a"/>
+  <!-- Arrow hitting target -->
+  <line x1="160" y1="130" x2="284" y2="130" stroke="#f5c518" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="286,130 272,123 272,137" fill="#f5c518"/>
+  <polygon points="160,130 172,122 168,130 172,138" fill="#c4b8dc"/>
+  <!-- Person with megaphone -->
+  <circle cx="90" cy="200" r="24" fill="#5b7bc4"/>
+  <rect x="72" y="227" width="36" height="50" rx="8" fill="#3a5499"/>
+  <rect x="64" y="232" width="14" height="34" rx="6" fill="#3a5499"/>
+  <!-- Megaphone -->
+  <polygon points="106,210 140,195 140,225 106,218" fill="#7c6aaa"/>
+  <rect x="140" y="195" width="28" height="30" rx="4" fill="#9b85c4"/>
+  <ellipse cx="168" cy="210" rx="12" ry="22" fill="#7c6aaa"/>
+  <!-- Sound waves -->
+  <path d="M 180 200 Q 195 210 180 220" fill="none" stroke="#f5c518" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 188 192 Q 210 210 188 228" fill="none" stroke="#f5c518" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <path d="M 196 184 Q 225 210 196 236" fill="none" stroke="#f5c518" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <!-- Floating ad cards -->
+  <rect x="220" y="230" width="90" height="60" rx="8" fill="#1e1b30" stroke="#7c6aaa" stroke-width="1.5"/>
+  <rect x="228" y="238" width="74" height="20" rx="4" fill="#7c6aaa" opacity="0.5"/>
+  <rect x="228" y="264" width="50" height="6" rx="3" fill="#c4b8dc" opacity="0.6"/>
+  <rect x="228" y="275" width="35" height="5" rx="2" fill="#5b7bc4" opacity="0.4"/>
+  <!-- Small floating card -->
+  <rect x="50" y="310" width="70" height="46" rx="6" fill="#1e1b30" stroke="#5b7bc4" stroke-width="1.5"/>
+  <rect x="57" y="317" width="56" height="15" rx="3" fill="#5b7bc4" opacity="0.5"/>
+  <rect x="57" y="337" width="38" height="5" rx="2" fill="#c4b8dc" opacity="0.5"/>
+  <rect x="57" y="347" width="28" height="5" rx="2" fill="#7c6aaa" opacity="0.4"/>
+  <!-- Stats icons top -->
+  <rect x="52" y="120" width="60" height="45" rx="6" fill="#1e1b30" stroke="#7c6aaa" stroke-width="1"/>
+  <rect x="58" y="128" width="12" height="28" rx="3" fill="#5b4f8a"/>
+  <rect x="74" y="135" width="12" height="21" rx="3" fill="#7c6aaa"/>
+  <rect x="90" y="125" width="12" height="31" rx="3" fill="#f5c518"/>
+  <!-- Legs -->
+  <rect x="76" y="275" width="12" height="36" rx="5" fill="#2a3d7a"/>
+  <rect x="92" y="275" width="12" height="36" rx="5" fill="#2a3d7a"/>
+  <!-- Plants -->
+  <rect x="20" y="358" width="8" height="18" rx="3" fill="#3a5a3a"/>
+  <ellipse cx="24" cy="346" rx="11" ry="15" fill="#4a7a4a" opacity="0.8"/>
+  <rect x="368" y="358" width="8" height="18" rx="3" fill="#3a5a3a"/>
+  <ellipse cx="372" cy="346" rx="11" ry="15" fill="#4a7a4a" opacity="0.8"/>
+</svg>
