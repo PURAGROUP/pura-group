@@ -692,7 +692,7 @@
         <input type="hidden" name="_subject" value="&#127760; NEW INQUIRY — Pura Group">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" id="form-next-url" value="https://pura-group.vercel.app/thank-you.html">
+        <input type="hidden" name="_next" id="form-next-url" value="https://pura-group.com/thank-you.html">
         <div class="form-row">
           <div class="form-group">
             <label data-en="Full Name *" data-es="Nombre Completo *">Full Name *</label>
@@ -833,8 +833,8 @@
     const nextUrl = document.getElementById('form-next-url');
     if (nextUrl) {
       nextUrl.value = lang === 'es'
-        ? 'https://pura-group.vercel.app/gracias.html'
-: 'https://pura-group.vercel.app/thank-you.html';
+        ? 'https://pura-group.com/gracias.html'
+: 'https://pura-group.com/thank-you.html';
     }
     // Translate all data-en/data-es elements
     document.querySelectorAll('[data-en]').forEach(el => {
