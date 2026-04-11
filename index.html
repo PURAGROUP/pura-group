@@ -185,11 +185,11 @@
       transition: box-shadow 0.2s, transform 0.2s;
     }
     .service-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
-    .service-img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; border-radius: 10px; margin-bottom: 18px; background: transparent; }
+    .service-img { width: 50%; aspect-ratio: 1 / 1; object-fit: contain; border-radius: 10px; margin-bottom: 18px; background: transparent; align-self: center; }
     .service-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--purple-light); font-weight: 700; letter-spacing: 1.5px; margin-bottom: 0; line-height: 1; }
     .service-card h3 { font-size: 1.6rem; font-weight: 700; color: var(--black); margin-bottom: 10px; line-height: 1.2; }
-    .service-card p { font-size: 0.93rem; color: var(--text-light); line-height: 1.8; margin-bottom: 16px; flex: 1; }
-    .service-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 7px; margin-top: 16px; }
+    .service-card p { font-size: 0.93rem; color: var(--text-light); line-height: 1.8; margin-bottom: 16px; }
+    .service-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 7px; margin-top: 16px; align-self: flex-start; }
     .service-bullets li { font-size: 0.88rem; color: var(--text-light); padding-left: 22px; position: relative; line-height: 1.6; }
     .service-bullets li::before { content: '\2713'; position: absolute; left: 0; color: var(--purple); font-size: 0.95rem; font-weight: 700; line-height: 1.6; }
 
@@ -303,6 +303,7 @@
       .section { padding: 72px 5%; }
       .section-title { font-size: 2.1rem; }
       h2 { font-size: 2.1rem; }
+      #process .section-title { font-size: 2.6rem; }
       .stats-bar { grid-template-columns: 1fr; }
       .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
       .stat-item:last-child { border-bottom: none; }
@@ -311,7 +312,7 @@
       .footer-bottom { flex-direction: column; text-align: center; }
       .form-group input, .form-group textarea, .form-group select { font-size: 18px !important; }
       .services-list { grid-template-columns: 1fr; }
-      .service-num { font-size: 4rem; margin-bottom: 0; line-height: 1; }
+      .service-num { font-size: 4rem; margin-bottom: 0.2rem; line-height: 1; }
       .service-card h3 { font-size: 1.7rem; }
       .service-card p { font-size: 1.125rem; }
       .service-bullets li { font-size: 1.1rem; }
@@ -360,10 +361,6 @@
     <button class="menu-toggle" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">&#9776;</button>
   </div>
   <div class="mobile-menu">
-    <div class="mobile-lang">
-      <button class="lang-btn active" id="btn-en-m" onclick="setLang('en')" title="English"><img src="images/english.png" alt="EN"></button>
-      <button class="lang-btn" id="btn-es-m" onclick="setLang('es')" title="Español"><img src="images/espanol.png" alt="ES"></button>
-    </div>
     <a href="#about" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="About Us" data-es="Quiénes Somos">About Us</a>
     <a href="#services" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="Services" data-es="Servicios">Services</a>
     <a href="#process" onclick="this.closest('.mobile-menu').classList.remove('open')" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</a>
@@ -790,7 +787,7 @@
       <div class="footer-brand">
         <img src="images/3-logo-pura-group-llc.png" alt="Pura Group LLC">
         <p data-en="Pura Group LLC — We build digital businesses from start to finish. Global operation, bilingual team, results-focused." data-es="Pura Group LLC — Construimos negocios digitales de principio a fin. Operación global, equipo bilingüe, enfoque en resultados.">Pura Group LLC — We build digital businesses from start to finish. Global operation, bilingual team, results-focused.</p>
-        <a href="mailto:hello@pura-group.com" class="footer-email">hello@pura-group.com</a>
+        <a href="/cdn-cgi/l/email-protection#325a575e5e5d72424740531f55405d47421c515d5f" class="footer-email"><span class="__cf_email__" data-cfemail="ed8588818182ad9d989f8cc08a9f82989dc38e8280">[email&#160;protected]</span></a>
       </div>
       <div class="footer-col">
         <h4 data-en="Services" data-es="Servicios">Services</h4>
@@ -819,7 +816,7 @@
 
 <a href="#" id="btn-top" aria-label="Back to top">&#9650;</a>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
   let currentLang = localStorage.getItem('pg-lang') || 'en';
@@ -831,9 +828,7 @@
     // Desktop buttons
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     document.getElementById('btn-es').classList.toggle('active', lang === 'es');
-    // Mobile buttons
-    document.getElementById('btn-en-m').classList.toggle('active', lang === 'en');
-    document.getElementById('btn-es-m').classList.toggle('active', lang === 'es');
+
     // Form redirect
     const nextUrl = document.getElementById('form-next-url');
     if (nextUrl) {
@@ -896,13 +891,4 @@
   });
 
   // Navbar scroll shadow
-  const navbar = document.querySelector('.navbar');
-  window.addEventListener('scroll', () => {
-    navbar.style.boxShadow = window.scrollY > 20
-      ? '0 2px 20px rgba(0,0,0,0.08)'
-      : '0 1px 0 rgba(124,106,170,0.12)';
-  });
-</script>
-
-</body>
-</html>
+  const navb
