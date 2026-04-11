@@ -276,12 +276,52 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     let lang = localStorage.getItem('pg-lang') || 'en';
     function setLang(l) {
-      lang = l; localStorage.setItem('pg-lang', l);
-      document.getElementById('btn-en').classList.toggle('active', l === 'en');
-      document.getElementById('btn-es').classList.toggle('active', l === 'es');
-      document.getElementById('content-en').style.display = l === 'en' ? 'block' : 'none';
-      document.getElementById('content-es').style.display = l === 'es' ? 'block' : 'none';
-      document.getElementById('page-title').textContent = l === 'es' ? 'AVISO LEGAL' : 'LEGAL NOTICE';
-      document.title = l === 'es' ? 'Aviso Legal | Pura Group LLC' : 'Legal Notice | Pura Group LLC';
+     lang = l; localStorage.setItem('pg-lang', l);
+    document.documentElement.lang = l;
+    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    document.getElementById('btn-es').classList.toggle('active', l === 'es');
+    document.getElementById('content-en').style.display = l === 'en' ? 'block' : 'none';
+    document.getElementById('content-es').style.display = l === 'es' ? 'block' : 'none';
+    document.getElementById('page-title').textContent = l === 'es' ? 'POLÍTICA DE COOKIES' : 'COOKIE POLICY';
+    document.title = l === 'es' ? 'Política de Cookies | Pura Group LLC' : 'Cookie Policy | Pura Group LLC';
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const text = el.getAttribute('data-' + l);
+      if (!text) return;
+      el.innerHTML = text;
+    });
+    const cookieText = document.getElementById('cookie-text');
+    if (cookieText) {
+      cookieText.innerHTML = l === 'es'
+        ? 'Usamos cookies propias y de terceros para mejorar tu experiencia. Visita nuestra <a href="cookie-policy.html">política de cookies</a>.'
+        : 'We use cookies to improve your experience. Visit our <a href="cookie-policy.html">cookie policy</a> page.';
+      document.getElementById('cookie-btn-reject').textContent = l === 'es' ? 'Rechazar' : 'Decline';
+      document.getElementById('cookie-btn-accept').textContent = l === 'es' ? 'Aceptar' : 'Accept';
+    }
+  }
+  setLang(lang);
+  if (localStorage.getItem('pg-cookies')) document.getElementById('cookie-banner').style.display = 'none';
+  function acceptCookies() { localStorage.setItem('pg-cookies', 'accepted'); document.getElementById('cookie-banner').style.display = 'none'; }
+  function closeCookies() { localStorage.setItem('pg-cookies', 'rejected'); document.getElementById('cookie-banner').style.display = 'none'; }
+  const btnTop = document.getElementById('btn-top');
+  window.addEventListener('scroll', () => { btnTop.classList.toggle('visible', window.scrollY > 500); });
+  btnTop.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  document.addEventListener('click', (e) => {
+    const menu = document.querySelector('.mobile-menu');
+    const toggle = document.querySelector('.menu-toggle');
+    if (menu && menu.classList.contains('open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    navbar.style.boxShadow = window.scrollY > 20
+      ? '0 2px 20px rgba(0,0,0,0.08)'
+      : '0 1px 0 rgba(124,106,170,0.12)';
+  });
+</script>
+</body>
+</html>
+
+ 
  
  
