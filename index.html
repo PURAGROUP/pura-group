@@ -64,7 +64,7 @@
       box-shadow: 0 1px 0 rgba(124,106,170,0.12); position: sticky; top: 0; z-index: 100;
     }
     .navbar-logo img { height: 80px; width: auto; }
-    .navbar-center { display: flex; align-items: center; gap: 32px; margin-left: auto; }
+    .navbar-center { display: flex; align-items: center; gap: 32px; margin-left: auto; margin-right: 32px; }
     .navbar-center a { font-size: 0.9rem; font-weight: 500; color: var(--text-light); transition: color 0.2s; letter-spacing: 0.01em; }
     .navbar-center a:hover { color: var(--purple); }
     .navbar-right { display: flex; align-items: center; gap: 16px; }
@@ -92,9 +92,13 @@
     .hero {
       position: relative; min-height: 620px;
       background: url('images/3-foto-header-pura-group.webp') center center / cover no-repeat;
-      display: flex; align-items: center;
+      display: flex; align-items: center; justify-content: center;
     }
-    .hero-content { position: relative; z-index: 1; padding: 80px 8%; max-width: 100%; text-align: center; }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(6, 3, 15, 0.55);
+    }
+    .hero-content { position: relative; z-index: 1; padding: 80px 8%; width: 100%; text-align: center; }
     .hero-tag {
       display: inline-block; background: rgba(124,106,170,0.35); color: var(--purple-light);
       border: 1px solid rgba(196,184,220,0.3);
@@ -174,13 +178,13 @@
       transition: box-shadow 0.2s, transform 0.2s;
     }
     .service-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
-    .service-img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 18px; }
-    .service-num { font-family: 'Cormorant Garamond', serif; font-size: 0.88rem; color: var(--purple-light); font-weight: 600; letter-spacing: 1.5px; margin-bottom: 4px; }
+    .service-img { width: 100%; height: 200px; object-fit: contain; border-radius: 10px; margin-bottom: 18px; background: #0d0d0d; }
+    .service-num { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--purple-light); font-weight: 700; letter-spacing: 1.5px; margin-bottom: 6px; }
     .service-card h3 { font-size: 1.25rem; font-weight: 700; color: var(--black); margin-bottom: 10px; line-height: 1.2; }
     .service-card p { font-size: 0.93rem; color: var(--text-light); line-height: 1.8; margin-bottom: 16px; flex: 1; }
-    .service-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 7px; margin-top: auto; }
-    .service-bullets li { font-size: 0.88rem; color: var(--text-light); padding-left: 18px; position: relative; line-height: 1.6; }
-    .service-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--purple); font-size: 0.85rem; }
+    .service-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 7px; margin-top: 16px; }
+    .service-bullets li { font-size: 0.88rem; color: var(--text-light); padding-left: 22px; position: relative; line-height: 1.6; }
+    .service-bullets li::before { content: '✓'; position: absolute; left: 0; color: var(--purple); font-size: 0.95rem; font-weight: 700; line-height: 1.6; }
 
     /* PROCESS */
     .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 20px; position: relative; }
@@ -231,9 +235,10 @@
       background: #faf9fd; transition: border-color 0.2s, box-shadow 0.2s; outline: none;
     }
     .form-group input:focus, .form-group textarea:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(124,106,170,0.1); background: white; }
-    .phone-row { display: flex; gap: 8px; }
-    .phone-prefix { width: 120px; flex-shrink: 0; padding: 14px 12px; border: 1.5px solid #ddd8ed; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 0.93rem; outline: none; background: #faf9fd; }
-    .phone-prefix:focus { border-color: var(--purple); }
+    .phone-row { display: flex; gap: 8px; align-items: stretch; }
+    .phone-row select { width: 130px !important; flex-shrink: 0; padding: 14px 10px; border: 1.5px solid #ddd8ed; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; outline: none; background: #faf9fd; color: var(--text); }
+    .phone-row select:focus { border-color: var(--purple); }
+    .phone-row input[type="tel"] { flex: 1; min-width: 0; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .form-privacy { font-size: 0.8rem; color: var(--text-light); margin-bottom: 24px; }
     .form-privacy a { color: var(--purple); text-decoration: underline; }
@@ -273,6 +278,7 @@
     }
     @media (max-width: 768px) {
       body { font-size: 16px; }
+      .hero { background-image: url('images/3-foto-header-movil-pura-group.webp'); background-position: center top; }
       .hero h1 { font-size: 2.4rem; }
       .hero-content { padding: 60px 6%; }
       .btn-nav { display: none; }
@@ -429,7 +435,7 @@
     <div class="services-list">
 
       <div class="service-card">
-        <img src="images/service-1.svg" alt="Validación y Estrategia" class="service-img">
+        <img src="images/service-1.png" alt="Validación y Estrategia" class="service-img">
         <div class="service-num">01</div>
         <h3>Validación y Estrategia de Negocio</h3>
         <p>Antes de invertir un solo euro en publicidad o tecnología, analizamos si tu idea tiene mercado real. Estudiamos el producto, el sector, la competencia y el cliente ideal. Definimos el posicionamiento, el modelo de negocio y el plan de acción.</p>
@@ -442,7 +448,7 @@
       </div>
 
       <div class="service-card">
-        <img src="images/service-2.svg" alt="Marca e Identidad" class="service-img">
+        <img src="images/service-2.png" alt="Marca e Identidad" class="service-img">
         <div class="service-num">02</div>
         <h3>Marca, Identidad y Copywriting</h3>
         <p>Creamos la identidad visual y verbal de tu empresa. Logo, paleta, tipografía, tono de voz y mensajes clave. Una marca que transmite credibilidad, coherencia y diferenciación desde el primer contacto.</p>
@@ -454,7 +460,7 @@
       </div>
 
       <div class="service-card">
-        <img src="images/service-3.svg" alt="Desarrollo Web" class="service-img">
+        <img src="images/service-3.png" alt="Desarrollo Web" class="service-img">
         <div class="service-num">03</div>
         <h3>Desarrollo Web y Presencia Digital</h3>
         <p>Diseñamos y desarrollamos tu web corporativa, landing pages, tiendas online o aplicaciones con un solo objetivo: que funcionen. Rápidas, seguras, optimizadas para buscadores y preparadas para convertir.</p>
@@ -467,7 +473,7 @@
       </div>
 
       <div class="service-card">
-        <img src="images/service-4.svg" alt="Captación y Publicidad" class="service-img">
+        <img src="images/service-4.png" alt="Captación y Publicidad" class="service-img">
         <div class="service-num">04</div>
         <h3>Captación de Clientes y Publicidad Digital</h3>
         <p>Diseñamos y gestionamos campañas en Meta (Facebook e Instagram) y Google Ads. Creamos los anuncios, los textos, las creatividades y las audiencias. Medimos cada euro invertido y optimizamos continuamente.</p>
@@ -480,7 +486,7 @@
       </div>
 
       <div class="service-card">
-        <img src="images/service-5.svg" alt="Automatización y CRM" class="service-img">
+        <img src="images/service-5.png" alt="Automatización y CRM" class="service-img">
         <div class="service-num">05</div>
         <h3>Automatización de Procesos y CRM</h3>
         <p>Eliminamos las tareas repetitivas de tu negocio. Implementamos sistemas que gestionan leads automáticamente, envían comunicaciones personalizadas y mantienen tu CRM actualizado sin intervención manual.</p>
@@ -493,7 +499,7 @@
       </div>
 
       <div class="service-card">
-        <img src="images/service-6.svg" alt="Marketing de Contenidos" class="service-img">
+        <img src="images/service-6.png" alt="Marketing de Contenidos" class="service-img">
         <div class="service-num">06</div>
         <h3>Estrategia Digital y Marketing de Contenidos</h3>
         <p>Diseñamos la estrategia digital integral de tu empresa: qué canales usar, qué contenido crear, cómo posicionarte y cómo medir que todo funciona. Gestionamos redes sociales y construimos comunidad alrededor de tu marca.</p>
@@ -506,7 +512,7 @@
       </div>
 
       <div class="service-card">
-        <img src="images/service-7.svg" alt="Análisis y Reporting" class="service-img">
+        <img src="images/service-7.png" alt="Análisis y Reporting" class="service-img">
         <div class="service-num">07</div>
         <h3>Análisis, Reporting e Inteligencia de Negocio</h3>
         <p>Los datos sin análisis no sirven de nada. Construimos cuadros de mando personalizados, informes ejecutivos y sistemas de seguimiento de KPIs para que tomes decisiones basadas en información real, no en intuición.</p>
@@ -519,7 +525,7 @@
       </div>
 
       <div class="service-card">
-        <img src="images/service-8.svg" alt="Consultoría Global" class="service-img">
+        <img src="images/service-8.png" alt="Consultoría Global" class="service-img">
         <div class="service-num">08</div>
         <h3>Consultoría Global y Modelos de Colaboración</h3>
         <p>Nos adaptamos a ti. Trabajamos como equipo externo, como extensión de tu equipo interno o como socio estratégico. Si tienes un proyecto que necesita dirección y ejecución, hablemos.</p>
@@ -661,7 +667,7 @@
   <div class="container">
     <div class="form-wrapper">
       <h2 class="form-title">Cuéntanos Tu Proyecto</h2>
-      <p class="form-sub">Sin compromisos. Sin presiones. Solo una conversación para ver si podemos ayudarte y cómo.<br>Te respondemos lo antes posible.</p>
+      <p class="form-sub">Sin compromisos. Sin presiones. Solo una conversación para ver si podemos ayudarte y cómo.<br>Te respondemos en menos de 24 horas.</p>
       <form id="contact-form" action="https://formsubmit.co/puragroupllc@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="🌐 NUEVA CONSULTA — Pura Group">
         <input type="hidden" name="_captcha" value="false">
@@ -680,7 +686,7 @@
         <div class="form-group">
           <label>Teléfono / WhatsApp</label>
           <div class="phone-row">
-            <select class="phone-prefix" name="Prefijo">
+            <select name="Prefijo">
               <option value="+34">🇪🇸 +34</option>
               <option value="+1">🇺🇸 +1</option>
               <option value="+44">🇬🇧 +44</option>
@@ -768,7 +774,7 @@
       <div class="footer-brand">
         <img src="images/3-logo-pura-group-llc.png" alt="Pura Group LLC">
         <p>Pura Group LLC — Construimos negocios digitales de principio a fin. Operación global, equipo bilingüe, enfoque en resultados.</p>
-        <a href="/cdn-cgi/l/email-protection#81e8efe7eec1f1f4f3e0ace6f3eef4f1afe2eeec" class="footer-email"><span class="__cf_email__" data-cfemail="3d54535b527d4d484f5c105a4f52484d135e5250">[email&#160;protected]</span></a>
+        <a href="mailto:hello@pura-group.com" class="footer-email">hello@pura-group.com</a>
       </div>
       <div class="footer-col">
         <h4>Servicios</h4>
@@ -797,7 +803,7 @@
 
 <a href="#" id="btn-top" aria-label="Volver arriba">▲</a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // Cookies
@@ -822,4 +828,13 @@
   });
 
   // Navbar scroll shadow
-  const navbar 
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    navbar.style.boxShadow = window.scrollY > 20
+      ? '0 2px 20px rgba(0,0,0,0.08)'
+      : '0 1px 0 rgba(124,106,170,0.12)';
+  });
+</script>
+
+</body>
+</html>
